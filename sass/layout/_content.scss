@@ -52,8 +52,7 @@ article,
 
   .data-label {
     display: inline-block;
-    vertical-align: text-top;
-    width: 100px;
+    width: 80px;
   }
 
   span {
@@ -104,5 +103,35 @@ article,
 }
 
 #person-details {
+  .cont-row {
+    display: flex;
+    justify-content: flex-start;
 
+    @include mq(S) {
+      justify-content: space-between;
+    }
+  }
+
+  .data-blood {
+    margin-left: $pad-mod * 5;
+
+    @include mq(S) {
+      margin-left: 0;
+    }
+
+    .data-label {
+      width: auto;
+    }
+
+    #data-blood {
+      display: block;
+      font-size: 1.6rem;
+      text-align: center;
+    }
+  }
+
+  .data-address {
+    align-items: flex-start;
+    display: flex;
+  }
 }
