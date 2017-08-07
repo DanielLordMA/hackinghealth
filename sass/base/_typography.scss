@@ -1,0 +1,300 @@
+//******************************************************************
+//  Table of Contents
+//  -----------------
+//
+//  1. Default Typography
+//  2. Headings
+//  3. Links
+//  4. HTML Elements
+//  5. Messages & Output
+//  6. Icons - Menu & Search
+//  7. Icons - Social Media
+//
+//******************************************************************
+
+//==================================================================
+//  1. Default Typography
+//==================================================================
+html {
+  @include font-style--content;
+  color: $col-1;
+  font-size: $font-size--base;
+  line-height: 1.5;
+
+  // Improve font for retina display
+  @include mq(retina) {
+    font-size: $font-size--retina;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 300;
+  }
+}
+
+// Text selection colour
+::selection {
+  background: $col-2;    // WebKit/Blink Browsers
+  color: $col-white;
+}
+
+// Required to ensure font working in certain browsers
+// scss-lint:disable VendorPrefix
+::-moz-selection {
+  background: $col-2;   // Gecko Browsers
+  color: $col-white;
+}
+
+
+//==================================================================
+//  2. Headings
+//==================================================================
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-style--title;
+  color: $col-3;
+  line-height: 1.1;
+  margin: 0 0 1rem 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: $font-size--h1;
+}
+
+h2 {
+  font-size: $font-size--h2;
+}
+
+h3 {
+  font-size: $font-size--h3;
+}
+
+h4 {
+  font-size: $font-size--h4;
+}
+
+h5 {
+  font-size: $font-size--h5;
+}
+
+h6 {
+  font-size: $font-size--h6;
+}
+
+
+//==================================================================
+//  3. Links
+//==================================================================
+a {
+  color: $col-3;
+  font-weight: bold;
+  outline: 0;                    // ensures dotted-line around link is hidden
+  text-decoration: none;
+
+  &:visited {
+    color: $col-3;
+    outline: 0;                    // ensures dotted-line around link is hidden
+    text-decoration: none;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    color: $col-2;
+    outline: 0;                    // ensures dotted-line around link is hidden
+    text-decoration: none;
+  }
+}
+
+
+//==================================================================
+//  4. HTML Elements
+//==================================================================
+abbr,
+acronym {
+  border-bottom: 1px dotted $col-3;
+  cursor: help;
+}
+
+article,
+p {
+  display: block;
+  margin: 0 0 1rem 0;
+
+  &:last-of-type {
+    margin: 0;
+  }
+}
+
+b,
+strong {
+  font-weight: bold;
+}
+
+big {
+  font-size: $font-size--lrg;
+}
+
+blockquote {
+  color: $col-3;
+  margin: 0 $pad-mod;
+  padding: $pad-site 0 $pad-site $pad-mod * 1.5;
+  position: relative;
+
+  &::before {
+    color: $col-2;
+    content: '\f10d';    // Left quote icon
+    font-family: FontAwesome;
+    font-size: 3.5rem;
+    font-weight: normal;
+    left: -20px;
+    margin-top: -45px;
+    position: absolute;
+    text-decoration: inherit;
+    top: 50%;
+  }
+}
+
+cite,
+dfn,
+em,
+i {
+  font-style: italic;
+}
+
+code,
+kbd,
+samp,
+tt,
+var {
+  @include font-style--code;
+  background: $col-code--bkg;
+  color: $col-code--font;
+  font-size: 0.8rem;
+  padding: 5px;
+}
+
+hr {
+  background-color: $col-1;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5rem;
+}
+
+mark,
+ins {
+  background: $col-2;
+  padding: 0 5px;
+  text-decoration: none;
+}
+
+pre {
+  @include font-style--code;
+  background: $col-code--bkg;
+  border: 1px solid $col-code--brd;
+  color: $col-code--font;
+  font-size: 0.8rem;
+  padding: $pad-site / 2;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+small {
+  font-size: $font-size--sml;
+}
+
+
+//==================================================================
+//  5. Messages & Output
+//==================================================================
+.error,
+%error {
+  // Required to ensure formatting applied when extending classes
+  // scss-lint:disable ImportantRule
+  background: rgba(#ff0000, 0.15) !important;
+  border: 1px solid #ff0000 !important;
+  color: #ff0000;
+  padding: $pad-site / 5 $pad-site / 2;
+}
+
+.success,
+%success {
+  // Required to ensure formatting applied when extending classes
+  // scss-lint:disable ImportantRule
+  background: rgba(#008000, 0.15) !important;
+  border: 1px solid #008000 !important;
+  color: #008000;
+  padding: $pad-site / 5 $pad-site / 2;
+}
+
+.warning,
+%warning {
+  // Required to ensure formatting applied when extending classes
+  // scss-lint:disable ImportantRule
+  background: rgba(#fde428, 0.15) !important;
+  border: 1px solid #fde428 !important;
+  color: #fde428;
+  padding: $pad-site / 5 $pad-site / 2;
+}
+
+
+//==================================================================
+//  6. Icons - Menu & Search
+//==================================================================
+[class^='icon-']::before,
+[class*=' icon-']::before {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 2rem;
+  font-weight: normal;
+  text-decoration: inherit;
+}
+
+span.icon-menu::before {
+  content: '\f039';    // Mobile menu icon
+  font-size: 24px;
+  line-height: 47px;
+}
+
+label.icon-search::before {
+  color: $col-white;
+  content: '\f002';    // Magnifying glass
+  font-size: 1.7rem;
+  margin-right: 12px;
+}
+
+
+//==================================================================
+//  7. Icons - Social Media
+//==================================================================
+[class^='icon-social-']::before,
+[class*=' icon-social-']::before {
+  // Required to ensure branding of social icons
+  // scss-lint:disable ImportantRule
+  font-size: 2rem;
+  font-weight: normal !important;
+  margin-right: 4px;
+}
+
+a.icon-social-twitter::before {
+  content: '\f081';    // Twitter Square
+}
+
+a.icon-social-linkedin::before {
+  content: '\f08c';    // LinkedIn Square
+}
+
+a.icon-social-github::before {
+  content: '\f092';    // GitHub Square
+}
+
+a.icon-social-facebook::before {
+  content: '\f082';    // Facebook Square
+}
+
+a.icon-social-googleplus::before {
+  content: '\f0d4';    // Google+ Square
+}

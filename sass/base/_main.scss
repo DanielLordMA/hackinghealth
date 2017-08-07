@@ -1,0 +1,32 @@
+//******************************************************************
+//  Table of Contents
+//  -----------------
+//
+//  1. Default Elements
+//
+//******************************************************************
+
+//==================================================================
+//  1. Default Elements
+//==================================================================
+html {
+  box-sizing: border-box;
+  display: flex;
+  height: 100%;
+}
+
+*,
+*::before,
+*::after {
+  // Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
+  box-sizing: inherit;
+  margin: 0;
+}
+
+body {
+  background: $col-bkg--body;
+  display: flex;
+  flex: 1 0 100%;
+  flex-direction: column;
+  min-height: 100%;
+}

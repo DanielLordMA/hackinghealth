@@ -1,0 +1,115 @@
+//******************************************************************
+//  Table of Contents
+//  -----------------
+//
+//  1. Tables - Default
+//  2. Tables - Responsive
+//  3. Column sizing (TD)
+//
+//******************************************************************
+
+//==================================================================
+//  1. Tables - Default
+//==================================================================
+table {
+  margin: 0;
+  table-layout: fixed;
+  width: 100%;
+}
+
+th {
+  @include font-style--title;
+  background: $col-2;
+  color: $col-white;
+  padding: 14px 6px;
+  text-align: left;
+}
+
+tr:first-of-type > td {
+  padding-top: 22px;
+}
+
+tr:nth-child(even) {
+  background: rgba($col-3, 0.1);
+}
+
+td {
+  padding: 12px 6px;
+}
+
+
+//==================================================================
+//  2. Tables - Responsive
+//==================================================================
+@mixin table--responsive($mq-type) {
+  @include mq($mq-type) {
+    thead {
+      display: none;
+    }
+
+    tr {
+      border-bottom: 1px solid rgba($col-grey, 0.7);
+      display: block;
+    }
+
+    tr:last-of-type {
+      border-bottom: 0;
+    }
+
+    tr:nth-child(even) {
+      background: rgba($col-3, 0.1);
+    }
+
+    td {
+      border-bottom: 1px dotted rgba($col-lgrey, 0.5);
+      display: block;
+      font-size: 13px;
+      padding: 10px 4px;
+      text-align: right;
+    }
+
+    td:last-child {
+      border-bottom: 0;
+    }
+
+    td::before {
+      content: attr(data-label);
+      float: left;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    [class*='td-col--'] {
+      width: auto;
+    }
+  }
+}
+
+// Standard Responsive Table
+.table--responsive {
+  @include table--responsive(S);
+}
+
+// Extra Small Responsive Table
+.table--responsive-xsml {
+  @include table--responsive(XS);
+}
+
+// Medium Responsive Table
+.table--responsive-med {
+  @include table--responsive(M);
+}
+
+
+//==================================================================
+//  3. Column sizing (TD)
+//==================================================================
+@for $i from 1 through 100 {
+  .td-col--#{$i } {
+    width: $i * 1%;
+  }
+}
+
+.td-col--auto {
+  width: auto;
+}

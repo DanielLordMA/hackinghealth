@@ -1,0 +1,47 @@
+//******************************************************************
+//  Table of Contents
+//  -----------------
+//
+//  1. Primary Logo
+//  2. Site Description
+//
+//******************************************************************
+
+//==================================================================
+//  1. Primary Logo
+//==================================================================
+.logo {
+  background: url('images/logo-web.svg') no-repeat top left;
+  background-size: contain;
+  color: $col-3;
+  display: inline-block;
+  font-size: 30px;
+  -webkit-font-smoothing: subpixel-antialiased;
+  font-weight: normal;
+  height: 50px;
+  text-indent: 60px;
+  text-transform: uppercase;
+  transition: background 1s;
+  vertical-align: middle;
+  width: 300px;
+
+  &:visited {
+    color: $col-3;
+  }
+
+  span {
+    @extend %screen-reader-text;
+  }
+}
+
+// Fix for IE8 and below that can't use svg images (Modernizr sets .no-svg automatically)
+.no-svg .logo {
+  background: url('images/logo-web.png');
+}
+
+
+//==================================================================
+//  2. Site Description
+//==================================================================
+.site-description {
+}

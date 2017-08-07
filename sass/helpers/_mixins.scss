@@ -1,0 +1,96 @@
+//******************************************************************
+//  Table of Contents
+//  -----------------
+//
+//  1. Media Queries
+//  2. Font Styles
+//  3. Layout Fixes
+//
+//******************************************************************
+
+
+//==================================================================
+//  1. Media Queries
+//==================================================================
+// ----------------------------------------------
+// |  MQ  |  Viewport Width  |  Device Type     |
+// ==============================================
+// |  XS  |  < 420px          |  Small Phone    |
+// |  S   |  420px - 767px    |  Large Phone    |
+// |  M   |  768px - 1024px   |  Tablet         |
+// |  L   |  1024px - 1680px  |  Laptop         |
+// |  XL  |  > 1680px         |  Large Monitor  |
+// ----------------------------------------------
+
+@mixin mq($mq) {
+  @if $mq == XS {
+    @media (max-width: $vp-xsml) { @content; }
+  }
+
+  @if $mq == S {
+    @media (max-width: $vp-sml) { @content; }
+  }
+
+  @if $mq == M {
+    @media (max-width: $vp-med) { @content; }
+  }
+
+  @if $mq == L {
+    @media (max-width: $vp-lrg) { @content; }
+  }
+
+  @if $mq == retina {
+   @media
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (min-device-pixel-ratio: 2),
+    only screen and (min-resolution: 192dpi),
+    only screen and (min-resolution: 2dppx) { @content; }
+  }
+}
+
+
+//==================================================================
+//  2. Font Styles
+//==================================================================
+@mixin font-style--title() {
+  font-family: $font-family--title;
+  font-weight: bold;
+  letter-spacing: 2px;
+
+  @include mq(retina) { font-weight: normal; }
+}
+
+@mixin font-style--content() {
+  font-family: $font-family--content;
+  font-weight: 400;
+}
+
+@mixin font-style--code() {
+  font-family: $font-family--code;
+  font-weight: normal;
+  letter-spacing: 0.8px;
+}
+
+
+//==================================================================
+//  3. Layout Fixes
+//==================================================================
+// Center block
+@mixin center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix() {
+  content: '';
+  display: table;
+}
+
+// Clear after (not all clearfix need this also)
+@mixin clearfix-after() {
+  clear: both;
+}

@@ -1,0 +1,49 @@
+//******************************************************************
+//  Table of Contents
+//  -----------------
+//
+//  1. Default Styling
+//  2. Content Articles
+//
+//******************************************************************
+
+//==================================================================
+//  1. Default Styling
+//==================================================================
+#content {
+  background-color: $col-bkg--content;
+
+  .site-content-full {
+  }
+
+  .site-content {
+  }
+
+  .site-sidebar {
+  }
+}
+
+
+//==================================================================
+//  2. Content Articles
+//==================================================================
+// NOTE: Default styling for articles which are essentially content
+//       modules that can be used and repeated as many times as required
+//       on a single page. Can also be used with grid system to position
+//       them side-by-side, etc.
+
+article,
+.module {
+}
+
+.module-header {
+}
+
+.module-meta {
+}
+
+.module-content {
+}
+
+.module-footer {
+}

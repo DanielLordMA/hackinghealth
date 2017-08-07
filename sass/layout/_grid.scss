@@ -1,0 +1,150 @@
+//******************************************************************
+//  Table of Contents
+//  -----------------
+//
+//  1. FlexGrid - Default
+//  2. FlexGrid - Gutters
+//  3. FlexGrid - Repsonsive
+//  4. FlexGrid - Positioning
+//  5. Column Sizing
+//
+//******************************************************************
+
+//==================================================================
+//  1. FlexGrid - Default
+//==================================================================
+.grid {
+  display: flex;
+  flex-wrap: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+// Auto Sizing Column
+.col {
+  flex: 1;
+}
+
+// Specific Sizing Columns
+// NOTE: Flex-basis is set based on number specified on class
+[class*='col-'] {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+
+//==================================================================
+//  2. FlexGrid - Gutters
+//==================================================================
+@mixin grid--gutter($gutter-size) {
+  margin-bottom: $gutter-size;        // Gutter between grids
+  margin-left: 0;
+  margin-right: $gutter-size * -1;
+  margin-top: $gutter-size * -1;
+
+  [class*='col'] {
+    flex-shrink: 1;                   // Allow column to shrink because of gutters
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: $gutter-size;
+    margin-top: $gutter-size;
+  }
+}
+
+// Standard Gutters
+.grid--gutter {
+  @include grid--gutter($grid--gutter);
+}
+
+// Small Gutters
+.grid--gutter-sml {
+  @include grid--gutter($grid--gutter-sml);
+}
+
+// Large Gutters
+.grid--gutter-lrg {
+  @include grid--gutter($grid--gutter-lrg);
+}
+
+// Extra-Large Gutters
+.grid--gutter-xlrg {
+  @include grid--gutter($grid--gutter-xlrg);
+}
+
+
+//==================================================================
+//  3. FlexGrid - Responsive
+//==================================================================
+@mixin grid--responsive($mq-type) {
+  // Enforces wrapping for mobile viewports
+  // scss-lint:disable ImportantRule
+
+  @include mq($mq-type) {
+    flex-wrap: wrap !important;
+
+    [class*='col-'] {
+      flex-basis: 100% !important;
+    }
+  }
+}
+
+// Standard Responsive Grid
+.grid--responsive {
+  @include grid--responsive(S)
+}
+
+// Extra Small Responsive Grid
+.grid--responsive-xsml {
+  @include grid--responsive(XS)
+}
+
+// Medium Responsive Grid
+.grid--responsive-med {
+  @include grid--responsive(M)
+}
+
+
+//==================================================================
+//  4. FlexGrid - Positioning
+//==================================================================
+.grid--start {
+  justify-content: flex-start;
+}
+
+.grid--end {
+  justify-content: flex-end;
+}
+
+.grid--center {
+  justify-content: center;
+}
+
+.grid--spacebetween {
+  justify-content: space-between;
+}
+
+.grid--spacearound {
+  justify-content: space-around;
+}
+
+
+//==================================================================
+//  5. Column Sizing
+//==================================================================
+// Enforces wrapping for mobile viewports
+// scss-lint:disable SingleLinePerProperty
+
+.col-12 { flex-basis: 100% * (12 / 12); }          // 100%
+.col-11 { flex-basis: 100% * (11 / 12); }          // 91.6%
+.col-10 { flex-basis: 100% * (10 / 12); }          // 83.3%
+.col-9  { flex-basis: 100% * (9 / 12);  }          // 75%
+.col-8  { flex-basis: 100% * (8 / 12);  }          // 66.67%
+.col-7  { flex-basis: 100% * (7 / 12);  }          // 58.3%
+.col-6  { flex-basis: 100% * (6 / 12);  }          // 50%
+.col-5  { flex-basis: 100% * (5 / 12);  }          // 41.6%
+.col-4  { flex-basis: 100% * (4 / 12);  }          // 33.33%
+.col-3  { flex-basis: 100% * (3 / 12);  }          // 25%
+.col-2  { flex-basis: 100% * (2 / 12);  }          // 16.6%
+.col-1  { flex-basis: 100% * (1 / 12);  }          // 8.3%

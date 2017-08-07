@@ -1,0 +1,119 @@
+//******************************************************************
+//  Table of Contents
+//  -----------------
+//
+//  1. Site Layout
+//  2. Site Offset
+//  3. Sidebar Offset
+//  4. Content Wrap
+//
+//******************************************************************
+
+//==================================================================
+//  1. Site Layout
+//==================================================================
+// NOTE: This sets the layout of the content and the sidebar throughout
+//       the site. It also allows for full-width content (i.e. no sidebar).
+
+header,
+footer {
+  flex: none;
+}
+
+#content {
+  display: flex;
+  flex: 1 0 auto;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+// Content with no sidebar
+.site-content-full {
+  margin: 0;
+  width: 100%;
+}
+
+// Content with sidebar
+.site-content {
+  margin: 0;
+  width: $vp-lrg--content;
+
+  @include mq(M) { width: $vp-med--content; }
+  @include mq(S) { width: 100%; }
+  @include mq(XS) { width: 100%; }
+}
+
+//Sidebar
+.site-sidebar {
+  margin: 0;
+  width: $vp-lrg--sidebar;
+
+  @include mq(M) { width: $vp-med--sidebar; }
+  @include mq(S) { display: none; }
+  @include mq(XS) { display: none; }
+}
+
+
+//==================================================================
+//  2. Site Offset
+//==================================================================
+// NOTE: Sets left & right padding so that the content is offset from
+//       the sides of the viewport. Applies to all key content areas.
+
+header,
+#content,
+footer {
+  // Required to ensure enforce padding on left  & right
+  // scss-lint:disable ImportantRule
+
+  padding-left: $vp-lrg--site-offset !important;
+  padding-right: $vp-lrg--site-offset !important;
+
+  @include mq(M) {
+    padding-left: $vp-med--site-offset !important;
+    padding-right: $vp-med--site-offset !important;
+  }
+
+  @include mq(S) {
+    padding-left: $vp-sml--site-offset !important;
+    padding-right: $vp-sml--site-offset !important;
+  }
+
+  @include mq(XS) {
+    padding-left: $vp-xsml--site-offset !important;
+    padding-right: $vp-xsml--site-offset !important;
+  }
+}
+
+
+//==================================================================
+//  3. Sidebar Offset
+//==================================================================
+// NOTE: Sets left margin on the sidebar so that the sidebar content
+//       is offset from main content (.site-content).
+
+.site-sidebar {
+  margin-left: $vp-lrg--sidebar-offset;
+
+  @include mq(M) { margin-left: $vp-med--sidebar-offset; }
+  @include mq(S) { margin-left: $vp-sml--sidebar-offset; }
+  @include mq(XS) { margin-left: $vp-xsml--sidebar-offset; }
+}
+
+
+//==================================================================
+//  4. Content-Wrap
+//==================================================================
+// NOTE: Used to limit the width of the site or particular elements
+//       on a site. For example if you don't want a full-width site
+//       but want the site to be limited to a certain width with white
+//       space on either side, then add content-wrap to header, content
+//       & footer.
+
+.content-wrap {
+  display: flex;
+  margin: 0 auto;
+  max-width: $vp-max-width;
+  min-height: 100%;
+  width: 100%;
+}
