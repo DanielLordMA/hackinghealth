@@ -33,15 +33,15 @@
   .head-menu {
     background: $col-bkg--menu;
     display: none;
-    left: 0;
-    margin: $pad-site * 2.1 auto;
+    margin: 0 auto;
     position: absolute;
     right: 0;
-    text-align: center;
+    text-align: right;
     z-index: 9999;
 
-    @include mq(M) { width: 70%; }
-    @include mq(S) { width: 97%; }
+    @include mq(XS) {
+      width: 100%;
+    }
 
     a {
       color: $col-white;
@@ -49,7 +49,7 @@
       font-weight: normal;
       letter-spacing: 2px;
       line-height: 16px;
-      padding: $pad-site / 1.5 $pad-site;
+      padding: $pad-site / 1.5 $pad-site $pad-site / 1.5 $pad-mod * 2;
       text-transform: uppercase;
 
       &:hover {
