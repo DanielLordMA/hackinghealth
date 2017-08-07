@@ -7,6 +7,7 @@
 //  3. Links
 //  4. HTML Elements
 //  5. Messages & Output
+//  6. Specific Content Styling
 //
 //******************************************************************
 
@@ -236,4 +237,19 @@ small {
   border: 1px solid #fde428 !important;
   color: #fde428;
   padding: $pad-site / 5 $pad-site / 2;
+}
+
+
+//==================================================================
+//  6. Speicfic Content Styling
+//==================================================================
+.data-label {
+  color: $col-3;
+}
+
+.data-important {
+  // Required to enforce bold on critical information
+  // scss-lint:disable ImportantRule
+  color: $col-2;
+  font-weight: bold !important;
 }
