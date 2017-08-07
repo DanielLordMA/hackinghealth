@@ -59,12 +59,31 @@ article,
 //==================================================================
 //  3. Specific Content Styling
 //==================================================================
-#person-details {
+#pre-person-details {
+  margin-top: 0;
+
   .module-header {
     display: none;
   }
 
   .module-content {
     text-align: center;
+
+    img {
+      border-radius: 50%;
+      height: 120px;
+      margin: 0;
+      width: 120px;
+    }
+
+    h1 {
+      margin: 0;
+      text-transform: none;
+    }
+
+    .data-label {
+      font-size: 0.9rem;
+      margin-top: -2px;
+    }
   }
 }
