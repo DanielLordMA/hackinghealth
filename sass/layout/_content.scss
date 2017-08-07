@@ -49,6 +49,16 @@ article,
 
 .module-content {
   padding: 0.5rem;
+
+  .data-label {
+    display: inline-block;
+    vertical-align: text-top;
+    width: 100px;
+  }
+
+  span {
+    display: inline-block;
+  }
 }
 
 .module-footer {
@@ -87,6 +97,12 @@ article,
 
     .data-label {
       font-size: 0.9rem;
+      padding-right: 5px;
+      width: auto;
     }
   }
+}
+
+#person-details {
+
 }
