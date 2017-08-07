@@ -3,11 +3,6 @@
 //  -----------------
 //
 //  1. Default Styling
-//  2. Search Form
-//  3. WP Contact Form 7
-//  4. WP Comments Form
-//      - Reply Comment Form
-//  5. WP Comments Subscribe Form
 //
 //******************************************************************
 
@@ -17,11 +12,10 @@
 input,
 select,
 textarea {
-  background-color: transparent;
+  background-color: $col-white;
   border: 1px solid $col-grey;
   border-radius: 2px;
-  color: $col-3;
-  font-weight: 300;
+  color: $col-1;
   line-height: 20px;
   margin-bottom: $pad-mod;
   margin-top: 0;
@@ -71,191 +65,4 @@ textarea {
   -webkit-appearance: none;
   border-radius: 0;
   outline: 0;
-}
-
-
-//==================================================================
-//  2. Search Form
-//==================================================================
-#search-form {
-  position: relative;
-
-  i {
-    left: 15px;
-    margin-right: 0;
-    position: absolute;
-    top: 15px;
-  }
-
-  input {
-    box-sizing: border-box;
-    padding-left: 45px;
-    width: 100%;
-  }
-}
-
-
-//==================================================================
-//  3. WP Contact Form 7
-//==================================================================
-// Default wpcf7 forms styling
-.wpcf7-form {
-  p {
-    margin: 0;
-  }
-}
-
-// ReCaptcha Form Element
-.wpcf7-recaptcha {
-  margin-bottom: $pad-mod;
-}
-
-// Non-valid form elements
-.wpcf7-not-valid {
-  @extend %error;
-}
-
-// Default output message styling
-div.wpcf7-response-output {
-  color: $col-3;
-  margin: $pad-site * -1 0 $pad-mod 0;
-  padding: 12px 10px;
-}
-
-// Successful email sent message
-div.wpcf7-mail-sent-ok {
-  @extend %success;
-  font-size: 0.9rem;
-}
-
-// Failure message on ReCaptcha control
-div.wpcf7-spam-blocked {
-  @extend %error;
-  font-size: 0.9rem;
-}
-
-// Failure message on form validation errors
-div.wpcf7-validation-errors {
-  @extend %error;
-  font-size: 0.9rem;
-}
-
-// Validation tip message that appears below field with error
-span.wpcf7-not-valid-tip {
-  font-size: 0.9rem;
-  margin: $pad-site * -2 0 $pad-site 0;
-}
-
-
-//==================================================================
-//  4. WP Comments Form
-//==================================================================
-.comment-respond {
-  margin-top: $pad-mod * 2;
-
-  .comment-reply-title {
-  }
-
-  input,
-  select,
-  textarea {
-    margin-bottom: $pad-site / 2;
-  }
-
-  p {
-    margin: $pad-site 0 0;
-    padding-left: 1em;
-  }
-
-  .post-info {
-    background: $col-scrn--read;
-    clear: both;
-    font-size: 0.9rem;
-    margin: $pad-site / 2 0 $pad-site / 2 1em;
-    padding: $pad-site $pad-site / 2;
-
-    @include mq(M) { font-size: 0.8rem; }
-
-    h6 {
-      font-size: 1.05rem;
-      letter-spacing: 0;
-      text-transform: uppercase;
-
-      @include mq(M) { font-size: 0.95rem; }
-    }
-
-    a {
-      color: $col-2;
-      font-weight: normal;
-    }
-
-    code {
-      background: none;
-      border: 0;
-      border-radius: 0;
-      font-size: 0.9rem;
-      margin-bottom: 0;
-
-      @include mq(M) { font-size: 0.8rem; }
-    }
-
-    p {
-      padding-left: 0;
-    }
-  }
-}
-
-//  Reply Comment Form
-//-------------------------------
-ol > li > .comment-respond {
-  background: $col-white;
-  border: 1px solid $col-lgrey;
-  margin-top: $pad-site * -0.5;
-  padding: $pad-site $pad-site 0;
-
-  small {
-    float: right;
-    padding: 0;
-
-    @include mq(S) {
-      display: block;
-      float: none;
-      margin-bottom: $pad-site * -2;
-      margin-top: $pad-site * 2;
-    }
-
-    a {
-      // Required to make button small in size
-      // scss-lint:disable PlaceholderInExtend
-      @extend %button;
-      @extend .small;
-    }
-  }
-}
-
-
-//==================================================================
-//  5. WP Comments Subscribe Form
-//==================================================================
-.subscribe-form-field {
-  border: 1px solid #bbbbbb;
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.2);
-  color: $col-3;
-  margin: 0 $pad-site / 2 0 $pad-mod;
-  padding: 7px;
-  width: 40%;
-
-  @include mq(S) {
-    margin-left: $pad-site;
-    width: 55%;
-  }
-}
-
-.subscribe-form-button {
-  @extend %button;
-}
-
-#subscribe-reloaded {             // Input Checkbox
-  margin-right: $pad-site / 2;
-  vertical-align: middle;
 }

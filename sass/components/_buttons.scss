@@ -3,8 +3,6 @@
 //  -----------------
 //
 //  1. Default Styling
-//  2. Read More Button
-//  3. Social Buttons
 //
 //******************************************************************
 
@@ -13,20 +11,18 @@
 //==================================================================
 .button,
 %button,
-.button:active,
+.button:visited,
 .button:focus,
-.button:hover,
-.button:visited {
+.button:active {
   // Required to ensure button is always styled correctly
   // scss-lint:disable ImportantRule
   @include font-style--content;
-  background: $col-3;
-  border: 2px solid $col-3;
-  border-radius: 0;
+  background: $col-2;
+  border: 0;
   color: $col-white;
   display: inline-block;
-  font-size: 0.9rem;
-  letter-spacing: 2px;
+  font-size: 1rem;
+  letter-spacing: 1px;
   line-height: 1.4;
   margin-bottom: 0;
   outline: 0;
@@ -34,11 +30,10 @@
   position: relative;
   text-transform: uppercase;
   transition: 0.5s;
-  white-space: nowrap;
 
   &:hover {
-    background: $col-2;
-    color: $col-3;
+    background: rgba($col-2, 0.8);
+    color: $col-white;
   }
 
   &.xlarge,
@@ -63,55 +58,5 @@
   &.xsmall:hover {
     font-size: 0.7rem;
     padding: 5px 10px !important;
-  }
-}
-
-
-//==================================================================
-//  2. Read More Button
-//==================================================================
-.read-more,
-.read-more:active,
-.read-more:focus,
-.read-more:hover,
-.read-more:visited {
-  // Required to ensure read more button is always styled correctly
-  // scss-lint:disable ImportantRule
-
-  @extend %button;
-  font-size: 0.65rem;
-  margin-left: $pad-site / 2;
-  padding: 3px 5px 4px 5px !important;
-}
-
-.read-more:hover {
-  background: $col-2;
-  color: $col-3;
-}
-
-
-//==================================================================
-//  3. Social Buttons
-//==================================================================
-.social-button,
-.social-button:hover {
-  // Required to ensure button is always styled correctly
-  // scss-lint:disable ImportantRule
-  @include font-style--content;
-  border: 0;
-  border-radius: 0;
-  color: $col-white !important;
-  display: inline-block;
-  font-size: 0.9rem;
-  line-height: 1.4;
-  outline: 0;
-  padding: 9px 16px !important;
-  position: relative;
-  text-transform: uppercase;
-  transition: 0.3s;
-  white-space: nowrap;
-
-  @include mq(S) {
-    padding: 7px 10px !important;
   }
 }

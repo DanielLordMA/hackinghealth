@@ -13,17 +13,27 @@
 .logo {
   background: url('images/logo-web.svg') no-repeat top left;
   background-size: contain;
-  color: $col-3;
+  color: $col-white;
   display: inline-block;
   font-size: 30px;
   -webkit-font-smoothing: subpixel-antialiased;
   font-weight: normal;
-  height: 50px;
+  height: 77px;
   text-indent: 60px;
   text-transform: uppercase;
   transition: background 1s;
   vertical-align: middle;
-  width: 300px;
+  width: 450px;
+
+  @include mq(S) {
+    height: 57px;
+    width: 350px;
+  }
+
+  @include mq(XS) {
+    height: 51px;
+    width: 300px;
+  }
 
   &:visited {
     color: $col-3;

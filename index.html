@@ -16,56 +16,35 @@
 
   <body class="page-search">
     <header role="banner">
-
       <div class="site-brand">
-        <a class="logo" href="#" rel="home">
-          <img src="images/logo-govt.png" alt="QLD Government">
-          <h1><span>FMD</span> <span>Manager</span></h1>
-        </a>
-      </div>
-
+        <h1 class="logo"><span>MedicAlert</span></h1>
+      </div><!-- end .site-brand -->
     </header><!-- end header -->
 
 
     <div id="content" role="main">
-
       <section class="site-content-full">
         <main class="content-area" role="main">
 
-          <div class="login-form">
+          <div class="search-form">
             <div>
-              <input id="tb_username" required="true" type="text" name="tb_username" value="" placeholder="Username" autofocus>
+              <input id="tb_ memberid" required="true" type="text" name="tb_ memberid" value="" placeholder="Member ID" autofocus>
             </div>
 
             <div>
-              <input id="tb_password" required="true" type="password" name="tb_password" value="" placeholder="Password">
+              <input id="btn_submit" type="submit" value="Get Record" class="button">
             </div>
-
-            <div>
-              <input id="tb_remember" required="" type="checkbox" name="tb_remember">
-              <label for="tb_remember">Remember Me?</label>
-            </div>
-
-            <div>
-              <input id="btn_submit" type="submit" value="Login" class="button">
-              <input id="btn_cancel" type="reset" value="Cancel" class="button">
-            </div>
-
-            <div id="div-result">
-              &nbsp;
-            </div>
-          </div><!-- END div.login-form -->
+          </div><!-- end div.search-form -->
 
         </main><!-- end .content-area -->
       </section><!-- end .site-content-full -->
-
     </div><!-- end #content -->
 
 
     <footer role="contentinfo">
-
-      <!-- FOOTER GOES HERE -->
-
+      <div id="div-result">
+        &nbsp;
+      </div>
     </footer><!-- end footer -->
 
     <script src="js/vendor/jquery-3.2.1.min.js"></script>
