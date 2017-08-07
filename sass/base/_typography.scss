@@ -52,10 +52,9 @@ h4,
 h5,
 h6 {
   @include font-style--title;
-  color: $col-3;
-  line-height: 1.1;
-  margin: 0 0 1rem 0;
-  padding: 0;
+  color: $col-1;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
 }
 
 h1 {
@@ -80,6 +79,8 @@ h5 {
 
 h6 {
   font-size: $font-size--h6;
+  margin-bottom: 0.2rem;
+  margin-left: 0.5rem;
 }
 
 
@@ -115,16 +116,6 @@ abbr,
 acronym {
   border-bottom: 1px dotted $col-3;
   cursor: help;
-}
-
-article,
-p {
-  display: block;
-  margin: 0 0 1rem 0;
-
-  &:last-of-type {
-    margin: 0;
-  }
 }
 
 b,
@@ -187,6 +178,15 @@ ins {
   background: $col-2;
   padding: 0 5px;
   text-decoration: none;
+}
+
+p {
+  display: block;
+  margin: 0 0 1rem 0;
+
+  &:last-of-type {
+    margin: 0;
+  }
 }
 
 pre {

@@ -55,9 +55,10 @@
 //  2. Font Styles
 //==================================================================
 @mixin font-style--title() {
+  // Force bold formatting of title font
+  // scss-lint:disable ImportantRule
   font-family: $font-family--title;
-  font-weight: bold;
-  letter-spacing: 2px;
+  font-weight: bold !important;
 
   @include mq(retina) { font-weight: normal; }
 }

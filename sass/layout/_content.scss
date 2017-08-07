@@ -4,6 +4,7 @@
 //
 //  1. Default Styling
 //  2. Content Articles
+//  3. Specific Content Styling
 //
 //******************************************************************
 
@@ -35,16 +36,35 @@
 
 article,
 .module {
+  margin: $pad-mod 0;
 }
 
 .module-header {
+  border-bottom: 1px solid $col-4;
 }
 
 .module-meta {
+  display: none;
 }
 
 .module-content {
+  padding: 0.5rem;
 }
 
 .module-footer {
+  display: none;
+}
+
+
+//==================================================================
+//  3. Specific Content Styling
+//==================================================================
+#person-details {
+  .module-header {
+    display: none;
+  }
+
+  .module-content {
+    text-align: center;
+  }
 }
