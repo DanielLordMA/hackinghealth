@@ -111,7 +111,7 @@ footer {
 //       & footer.
 
 .content-wrap {
-  display: flex;
+  display: block;
   margin: 0 auto;
   max-width: $vp-max-width;
   min-height: 100%;

@@ -10,14 +10,20 @@
 //  1. Default Styling
 //==================================================================
 header {
-  align-items: center;
   background-color: $col-bkg--header;
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: space-between;
+  margin-top: $pad-site / 2;
+
+  .content-wrap {
+    align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
 }
 
 .site-nav-home {
+  padding-bottom: 3px;
+
   a,
   a:active,
   a:focus,

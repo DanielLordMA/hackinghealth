@@ -7,8 +7,6 @@
 //  3. Links
 //  4. HTML Elements
 //  5. Messages & Output
-//  6. Icons - Menu & Search
-//  7. Icons - Social Media
 //
 //******************************************************************
 
@@ -238,63 +236,4 @@ small {
   border: 1px solid #fde428 !important;
   color: #fde428;
   padding: $pad-site / 5 $pad-site / 2;
-}
-
-
-//==================================================================
-//  6. Icons - Menu & Search
-//==================================================================
-[class^='icon-']::before,
-[class*=' icon-']::before {
-  display: inline-block;
-  font-family: FontAwesome;
-  font-size: 2rem;
-  font-weight: normal;
-  text-decoration: inherit;
-}
-
-span.icon-menu::before {
-  content: '\f039';    // Mobile menu icon
-  font-size: 24px;
-  line-height: 47px;
-}
-
-label.icon-search::before {
-  color: $col-white;
-  content: '\f002';    // Magnifying glass
-  font-size: 1.7rem;
-  margin-right: 12px;
-}
-
-
-//==================================================================
-//  7. Icons - Social Media
-//==================================================================
-[class^='icon-social-']::before,
-[class*=' icon-social-']::before {
-  // Required to ensure branding of social icons
-  // scss-lint:disable ImportantRule
-  font-size: 2rem;
-  font-weight: normal !important;
-  margin-right: 4px;
-}
-
-a.icon-social-twitter::before {
-  content: '\f081';    // Twitter Square
-}
-
-a.icon-social-linkedin::before {
-  content: '\f08c';    // LinkedIn Square
-}
-
-a.icon-social-github::before {
-  content: '\f092';    // GitHub Square
-}
-
-a.icon-social-facebook::before {
-  content: '\f082';    // Facebook Square
-}
-
-a.icon-social-googleplus::before {
-  content: '\f0d4';    // Google+ Square
 }
