@@ -12,68 +12,20 @@
 //  1. Primary Navigation
 //==================================================================
 .site-nav-main {
-  .head-menu {
-    // Hide non-mobile menu on mobile devices
-    @include mq(M) { display: none; }
-
-    a,
-    a:focus,
-    a:visited {
-      @include font-style--title;
-      color: $col-3;
-      display: inline-block;
-      font-size: 0.8rem;
-      letter-spacing: normal;
-      padding: 15px;
-      position: relative;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    a:hover {
-      background: $col-2;
-      color: $col-white;
-    }
-
-    .current-menu-item,
-    .current-menu-item:hover,
-    .current-page-ancestor,
-    .current-page-ancestor:hover,
-    .current-post-ancestor,
-    .current-post-ancestor:hover {
-      // Required to ensure current menu item styled correctly
-      // scss-lint:disable ImportantRule
-      background: $col-2;
-      color: $col-white !important;
-    }
-  }
-}
-
-
-//==================================================================
-//  2. Mobile Navigation
-//==================================================================
-.site-nav-main {
-  .head-menu-mobile-toggle {
-    border: 1px solid $col-3;
-    color: $col-3;
+  .head-menu-toggle {
+    color: $col-1;
     cursor: pointer;
-    display: none;
+    display: block;
     height: 48px;
     text-align: center;
     width: 48px;
 
-    // Show mobile menu on mobile devices
-    @include mq(M) { display: block; }
-
     &:hover {
-      background: $col-2;
-      border: 1px solid $col-2;
-      color: $col-white;
+      color: $col-2;
     }
   }
 
-  .head-menu-mobile {
+  .head-menu {
     background: $col-bkg--menu;
     display: none;
     left: 0;

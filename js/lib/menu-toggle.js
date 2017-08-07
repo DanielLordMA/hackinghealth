@@ -1,7 +1,7 @@
 //==================================================================
 // @summary
-//   Used for the mobile menu button, to toggle showing / hiding the
-//   mobile menu of the site.
+//   Used for the main menu button, to toggle showing / hiding the
+//   menu of the site.
 //
 // @param none.
 // @return none.
@@ -14,9 +14,9 @@
 //==================================================================
 
 $(document).ready(function() {
-  $('#head-menu-mobile').hide();
-  $('.head-menu-mobile-toggle').click(function(event) {
-    $('#head-menu-mobile').slideToggle(300);
+  $('#head-menu').hide();
+  $('.head-menu-toggle').click(function(event) {
+    $('#head-menu').slideToggle(300);
     event.preventDefault();
   });
 });

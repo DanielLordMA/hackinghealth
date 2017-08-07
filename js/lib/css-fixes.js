@@ -18,8 +18,3 @@
 if (!Modernizr.svg) {                   //jshint ignore:line
   $('.logo').addClass('no-svg');
 }
-
-
-//  Applying FitVids to Module
-//-------------------------------
-$('article').fitVids();
