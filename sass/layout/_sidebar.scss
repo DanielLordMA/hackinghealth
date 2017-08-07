@@ -3,11 +3,6 @@
 //  -----------------
 //
 //  1. Default Styling
-//  2. Widget Formatting
-//      - Newsletter Sign-up
-//      - Search Bar
-//      - Tag Cloud
-
 //
 //******************************************************************
 
@@ -22,58 +17,3 @@
   .module {
   }
 }
-
-
-//==================================================================
-//  2. Widget Formatting
-//==================================================================
-
-//  Newsletter Sign-up
-//-------------------------------
-
-// Required as styling mailchimp configured form
-// scss-lint:disable SelectorFormat
-
-// Validaiton error - input element styling
-input.mce_inline_error {
-  @extend %error;
-}
-
-// Validation error - message prompt
-div.mce_inline_error {
-  // Required ensure error message is not shown
-  // scss-lint:disable ImportantRule
-  display: none !important;
-}
-
-// Form submit - success message
-#mce-success-response {
-  @extend %success;
-  color: $col-3;
-  font-size: 0.8rem;
-  margin-bottom: $pad-site;
-  margin-top: $pad-site * -1;
-  padding: 12px 10px;
-}
-
-// Form submit - error message
-#mce-error-response {
-  @extend %error;
-  color: $col-3;
-  font-size: 0.8rem;
-  margin-bottom: $pad-site;
-  margin-top: $pad-site * -1;
-  padding: 12px 10px;
-}
-
-//  Search Bar
-//-------------------------------
-// NOTE: The styling for the search bar is in the _forms.scss file under the
-// Search Forms section. This reason for this is because it makes more
-// sense to store all of the forms related styling there.
-
-//  Tag Cloud
-//-------------------------------
-// NOTE: Tags for tag cloud are styled in the _wordpress.scss file. It has
-// been placed there as it styles all tags and categories throughout
-// the site.

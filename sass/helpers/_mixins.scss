@@ -15,11 +15,11 @@
 // ----------------------------------------------
 // |  MQ  |  Viewport Width  |  Device Type     |
 // ==============================================
-// |  XS  |  < 420px          |  Small Phone    |
-// |  S   |  420px - 767px    |  Large Phone    |
-// |  M   |  768px - 1024px   |  Tablet         |
-// |  L   |  1024px - 1680px  |  Laptop         |
-// |  XL  |  > 1680px         |  Large Monitor  |
+// |  XS  |  < 320px         |  Small Phone     |
+// |  S   |  320px - 767px   |  Large Phone     |
+// |  M   |  768px - 1024px  |  Tablet          |
+// |  L   |  1024px - 1280px |  Laptop          |
+// |  XL  |  > 1280px        |  Large Monitor   |
 // ----------------------------------------------
 
 @mixin mq($mq) {
