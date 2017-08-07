@@ -81,9 +81,12 @@ article,
       text-transform: none;
     }
 
+    div {
+      margin-top: -5px;
+    }
+
     .data-label {
       font-size: 0.9rem;
-      margin-top: -2px;
     }
   }
 }
