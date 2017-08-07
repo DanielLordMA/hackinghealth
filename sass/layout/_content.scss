@@ -36,7 +36,7 @@
 
 article,
 .module {
-  margin: $pad-mod 0;
+  margin: $pad-site 0;
 }
 
 .module-header {
@@ -69,7 +69,9 @@ article,
 //  3. Specific Content Styling
 //==================================================================
 #pre-person-details {
-  margin-top: 0;
+  @include mq(S) {
+    margin-top: $pad-mod * -1;
+  }
 
   .module-header {
     display: none;
@@ -80,12 +82,13 @@ article,
 
     img {
       border-radius: 50%;
-      height: 120px;
+      height: 80px;
       margin: 0;
-      width: 120px;
+      width: 80px;
     }
 
     h1 {
+      font-size: 1.8rem;
       margin: 0;
       text-transform: none;
     }
@@ -95,7 +98,7 @@ article,
     }
 
     .data-label {
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       padding-right: 5px;
       width: auto;
     }
@@ -125,7 +128,7 @@ article,
 
     #data-blood {
       display: block;
-      font-size: 1.6rem;
+      font-size: 1.4rem;
       text-align: center;
     }
   }

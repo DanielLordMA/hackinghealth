@@ -16,7 +16,7 @@
 $(document).ready(function() {
   $('#head-menu').hide();
   $('.head-menu-toggle').click(function(event) {
-    $('#head-menu').slideToggle(300);
+    $('#head-menu').slideToggle(100);
     event.preventDefault();
   });
 });
