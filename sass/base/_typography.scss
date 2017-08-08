@@ -255,3 +255,14 @@ small {
   color: $col-2;
   font-weight: bold !important;
 }
+
+.cont-moreinfo-toggle {
+  cursor: pointer;
+}
+
+.cont-moreinfo-toggle::after {
+  content: '\f078';
+  display: inline-block;
+  font-family: FontAwesome;
+  padding-left: $pad-site / 3;
+}
