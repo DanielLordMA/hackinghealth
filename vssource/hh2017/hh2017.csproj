@@ -135,6 +135,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\global-min.js" />
+    <Content Include="Scripts\global.js" />
+    <Content Include="Scripts\lib\css-fixes.js" />
+    <Content Include="Scripts\lib\expand-field.js" />
+    <Content Include="Scripts\lib\ie-html5-fix.js" />
+    <Content Include="Scripts\lib\menu-toggle.js" />
+    <Content Include="Scripts\lib\scroll-to-top.js" />
+    <Content Include="Scripts\lib\skip-link-focus-fix.js" />
+    <Content Include="Scripts\vendor\customizer.js" />
+    <Content Include="Scripts\vendor\modernizr-custom-3.3.1-min.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
