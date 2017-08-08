@@ -300,3 +300,9 @@ vssource/.vs/hh2017/v14/.suo
 vssource/hh2017/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
 vssource/hh2017/obj/Debug/hh2017.csprojResolveAssemblyReference.cache
 vssource/packages/Antlr.3.4.1.9004/lib/Antlr3.Runtime.pdb
+
+# Luca Specific Ignores
+.DS_Store
+.sass-cache
+config.codekit
+/config.codekit3
