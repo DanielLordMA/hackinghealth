@@ -92,9 +92,14 @@ article,
 
     img {
       border-radius: 50%;
-      height: 80px;
+      height: 120px;
       margin: 0;
-      width: 80px;
+      width: 120px;
+
+      @include mq(S) {
+        height: 80px;
+        width: 80px;
+      }
     }
 
     h1 {
@@ -131,10 +136,10 @@ article,
   }
 
   #data-dob {
-    color: $col-3;
     display: block;
-    font-size: 0.85rem;
+    margin-bottom: 0;
     margin-left: 80px;
+    margin-top: 0;
   }
 
   .data-blood {
@@ -160,15 +165,26 @@ article,
   }
 
   #data-address-full {
-    color: $col-3;
     display: block;
-    font-size: 0.85rem;
+    margin-bottom: 0;
     margin-left: 80px;
+    margin-top: 0;
   }
 }
 
 #critical-emergency-info {
   ul > li {
     @extend %data-important;
+  }
+}
+
+#emergency-contacts,
+#medical-contacts {
+  .data-contact {
+    margin-bottom: $pad-mod;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
   }
 }

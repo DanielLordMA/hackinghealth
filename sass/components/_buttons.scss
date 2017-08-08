@@ -3,6 +3,7 @@
 //  -----------------
 //
 //  1. Default Styling
+//  2. OnOff Switch Button
 //
 //******************************************************************
 
@@ -59,4 +60,62 @@
     font-size: 0.7rem;
     padding: 5px 10px !important;
   }
+}
+
+
+//==================================================================
+//  2. OnOff Switch Button
+//==================================================================
+.onoffswitch {
+  margin: 0 $pad-site / 2;
+  position: relative;
+  user-select: none;
+  width: 60px;
+}
+
+.onoffswitch-checkbox {
+  display: none;
+}
+
+.onoffswitch-label {
+  background-color: $col-white;
+  border: 2px solid #e3e3e3;
+  border-radius: 26px;
+  cursor: pointer;
+  display: block;
+  height: 27px;
+  line-height: 26px;
+  overflow: hidden;
+  padding: 0;
+  transition: background-color 0.3s ease-in;
+}
+
+.onoffswitch-label::before {
+  // Required for correct effect of button move
+  // scss-lint:disable TransitionAll
+  background: $col-white;
+  border: 2px solid #e3e3e3;
+  border-radius: 26px;
+  bottom: 0;
+  content: '';
+  display: block;
+  margin: 0;
+  position: absolute;
+  right: 24px;
+  top: 0;
+  transition: all 0.3s ease-in 0s;
+  width: 36px;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label {
+  background-color: $col-2;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label,
+.onoffswitch-checkbox:checked + .onoffswitch-label::before {
+  border-color: $col-2;
+}
+
+.onoffswitch-checkbox:checked + .onoffswitch-label::before {
+  right: 0;
 }

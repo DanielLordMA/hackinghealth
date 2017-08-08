@@ -22,7 +22,7 @@
 // Default Colours
 
 $black:                       #000000;          // Black
-$red:                         #e9003b;          // MedicAlert Red
+$red:                         #ea2e5a;          // MedicAlert Red
 $grey:                        #595959;          // Grey
 $dark-grey:                   #333333;          // Dark Grey
 $dark-grey-menu:              #292929;          // Dark Grey Menu
@@ -40,10 +40,10 @@ $colours-font:                #000000;          // Black
 
 // Standard Elements
 
-$col-1:                       $black;           // Black            : Default content font colour
+$col-1:                       $white;           // White            : Default content font colour
 $col-2:                       $red;             // MedicAlert Red   : Brand colour (hover links, menu, etc)
-$col-3:                       $grey;            // Grey             : Alternate text (e.g. form labels, etc)
-$col-4:                       $light-grey;      // Light Grey       : Section borders and other secondary elements on site
+$col-3:                       $light-grey;      // Light Grey       : Alternate text (e.g. form labels, etc)
+$col-4:                       $grey;            // Grey             : Section borders and other secondary elements on site
 
 $col-white:                   $white;           // White            : Used for various misc elements
 $col-black:                   $black;           // Black            : Used for various misc elements
@@ -53,12 +53,12 @@ $col-lgrey:                   $light-grey;      // Light Grey       : Used for v
 $col-dgrey:                   $dark-grey;       // Dark Grey        : Used for various misc elements
 
 // Background Colours
-$col-bkg--body:               $white;           // White            : Default body background colour
-$col-bkg--menu:               $dark-grey-menu;  // Dark Grey        : Menu background colour (usually for mobile menu)
-$col-bkg--header:             $white;           // White            : Header background colour
-$col-bkg--content:            $white;           // White            : Content background colour
-$col-bkg--footer:             $white;           // White            : Footer background colour
-$col-bkg--sidebar:            $white;           // White            : Sidebar background colour
+$col-bkg--body:               $dark-grey-menu;  // Dark Grey        : Default body background colour
+$col-bkg--menu:               $red;             // MedicAlert Red   : Menu background colour (usually for mobile menu)
+$col-bkg--header:             $dark-grey-menu;  // Dark Grey        : Header background colour
+$col-bkg--content:            $dark-grey-menu;  // Dark Grey        : Content background colour
+$col-bkg--footer:             $dark-grey-menu;  // Dark Grey        : Footer background colour
+$col-bkg--sidebar:            $dark-grey-menu;  // Dark Grey        : Sidebar background colour
 $col-bkg--search:             $dark-grey-menu;  // Dark Grey        : Search Page (home) background colour
 
 // Data Colours (used for graphs, etc)

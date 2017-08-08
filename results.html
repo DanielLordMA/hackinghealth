@@ -4,8 +4,29 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link href="style.css" rel="stylesheet">
+    <link href="style.css" type="text/css" rel="stylesheet">
     <title>MedicAlert</title>
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="MedicAlert"/>
+    <meta name="msapplication-TileColor" content="#E9003B" />
+    <meta name="msapplication-TileImage" content="images/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="images/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="images/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="images/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="images/mstile-310x310.png" />
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -38,7 +59,8 @@
             <a href="#allergies">Allergies</a>
             <a href="#medications">Medications</a>
             <a href="#documents">Documents</a>
-            <a href="#contact-details">Contact Details</a>
+            <a href="#emergency-contacts">Emergency Contacts</a>
+            <a href="#medical-contacts">Medical Contacts</a>
           </nav>
         </div><!-- end .site-nav-main -->
       </div><!-- end .content-wrap -->
@@ -62,6 +84,9 @@
                 <div>
                   <span class="data-label">Member #:</span><span id="data-memberid" class="data-label">12345678</span>
                 </div>
+                <div>
+                  <span class="data-label">NHI #:</span><span id="data-nhiid" class="data-label">12345678</span>
+                </div>
               </div>
               <div class="module-footer"></div>
             </article>
@@ -75,14 +100,16 @@
               <div class="module-content">
                 <div class="cont-row">
                   <div class="data-dob">
-                    <span class="data-label">Age:</span><span id="data-age">60 years</span><span id="data-dob">01/01/1967</span>
+                    <span class="data-label">Age:</span><span id="data-age" class="cont-moreinfo-toggle">60 years</span>
+                    <span id="data-dob" class="cont-moreinfo">01/01/1967</span>
                   </div>
                   <div class="data-blood">
                     <span class="data-label">Blood Type:</span><span id="data-blood" class="data-important">AB+</span>
                   </div>
                 </div>
                 <div class="data-address">
-                  <span class="data-label">Address:</span><span id="data-address">CARINDALE, 4152</span><span id="data-address-full">Unit 2A,<br />123 No Street,<br />No City, QLD, 4000</span>
+                  <span class="data-label">Address:</span><span id="data-address" class="cont-moreinfo-toggle">CARINDALE, 4152</span>
+                  <span id="data-address-full" class="cont-moreinfo">Unit 2A,<br />123 No Street,<br />No City, QLD, 4000</span>
                 </div>
               </div>
               <div class="module-footer"></div>
@@ -98,21 +125,13 @@
                 <ul id="data-critical">
                   <li>Hemophilia Condition</li>
                   <li>Latex Allergy</li>
-                  <li>Panadol Medication</li>
+                  <li class="cont-moreinfo-toggle">Panadol Medication</li>
+                  <span class="cont-moreinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, earum, alias. Qui praesentium dolore hic, reiciendis numquam neque incidunt, consequatur debitis quaerat minus similique delectus, dolor optio. Natus ipsum, odio.</span>
+                  <li>Advanced Directive Document</li>
                 </ul>
               </div>
               <div class="module-footer"></div>
             </article>
-
-            <div>
-              <ul>
-                <li class="expandable">
-                  Asthma
-                  <span class="expandable-content">Severe asthma</span>
-                </li>
-                <li>Diabetes</li>
-              </ul>
-            </div>
 
             <!-- Conditions -->
             <article id="conditions" class="module">
@@ -170,20 +189,78 @@
               <div class="module-meta"></div>
               <div class="module-content">
                 <ul id="data-documents">
-                  <li>None</li>
+                  <li class="data-important cont-moreinfo-toggle">Advanced Directive</li>
+                  <span class="cont-moreinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, earum, alias. Qui praesentium dolore hic, reiciendis numquam neque incidunt, consequatur debitis quaerat minus similique delectus, dolor optio. Natus ipsum, odio.</span>
                 </ul>
               </div>
               <div class="module-footer"></div>
             </article>
 
-            <!-- Contact Details -->
-            <article id="contact-details" class="module">
+            <!-- Emergency Contacts -->
+            <article id="emergency-contacts" class="module">
               <div class="module-header">
-                <h6>Contact Details</h6>
+                <h6>Emergency Contacts</h6>
               </div>
               <div class="module-meta"></div>
               <div class="module-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aliquam quo, deleniti exercitationem nam impedit numquam odit. Repellat tempora doloremque eligendi velit, quis ad. Ducimus qui quas magni neque inventore.</p>
+
+                <div class="data-contact">
+                  <div>
+                    <span class="data-label">Name:</span><span>John Smith (Father)</span>
+                  </div>
+                  <div>
+                    <span class="data-label">Home:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
+                  </div>
+                  <div>
+                    <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
+                  </div>
+                  <div>
+                    <span class="data-label">Email:</span><span><a href="mailto:john.smith@email.com">john.smith@email.com</a></span>
+                  </div>
+                </div>
+
+                <div class="data-contact">
+                  <div>
+                    <span class="data-label">Name:</span><span>Jane Smith (Mother)</span>
+                  </div>
+                  <div>
+                    <span class="data-label">Home:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
+                  </div>
+                  <div>
+                    <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
+                  </div>
+                  <div>
+                    <span class="data-label">Email:</span><span><a href="mailto:jane.smith@email.com">jane.smith@email.com</a></span>
+                  </div>
+                </div>
+
+              </div>
+              <div class="module-footer"></div>
+            </article>
+
+            <!-- Medical Contacts -->
+            <article id="medical-contacts" class="module">
+              <div class="module-header">
+                <h6>Medical Contacts</h6>
+              </div>
+              <div class="module-meta"></div>
+              <div class="module-content">
+
+                <div class="data-contact">
+                  <div>
+                    <span class="data-label">Name:</span><span>John Smith (GP)</span>
+                  </div>
+                  <div>
+                    <span class="data-label">Work:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
+                  </div>
+                  <div>
+                    <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
+                  </div>
+                  <div>
+                    <span class="data-label">Email:</span><span><a href="mailto:john.smith@email.com">john.smith@email.com</a></span>
+                  </div>
+                </div>
+
               </div>
               <div class="module-footer"></div>
             </article>
@@ -196,7 +273,12 @@
 
     <footer role="contentinfo">
       <div class="content-wrap">
-        <!-- FOOTER GOES HERE -->
+        <div>Dark</div>
+        <div class="onoffswitch">
+          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+          <label class="onoffswitch-label" for="myonoffswitch"></label>
+        </div>
+        <div>Light</div>
       </div><!-- end .content-wrap -->
     </footer><!-- end footer -->
 

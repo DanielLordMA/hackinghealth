@@ -15,9 +15,9 @@
 //==================================================================
 
 $(document).ready(function() {
-    $('.expandable-content').hide();
-    $('.expandable').click(function() {
-        $(this).children( '.expandable-content' ).slideToggle(100);
+    $('.cont-moreinfo').hide();
+    $('.cont-moreinfo-toggle').click(function() {
+        $(this).next('.cont-moreinfo').slideToggle(100);
         event.preventDefault();
     });
 });
