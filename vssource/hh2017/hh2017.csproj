@@ -127,8 +127,28 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\style-dark.css" />
+    <Content Include="Content\images\apple-touch-icon-114x114.png" />
+    <Content Include="Content\images\apple-touch-icon-120x120.png" />
+    <Content Include="Content\images\apple-touch-icon-144x144.png" />
+    <Content Include="Content\images\apple-touch-icon-152x152.png" />
+    <Content Include="Content\images\apple-touch-icon-57x57.png" />
+    <Content Include="Content\images\apple-touch-icon-60x60.png" />
+    <Content Include="Content\images\apple-touch-icon-72x72.png" />
+    <Content Include="Content\images\apple-touch-icon-76x76.png" />
+    <Content Include="Content\images\favicon-128.png" />
+    <Content Include="Content\images\favicon-16x16.png" />
+    <Content Include="Content\images\favicon-196x196.png" />
+    <Content Include="Content\images\favicon-32x32.png" />
+    <Content Include="Content\images\favicon-96x96.png" />
+    <Content Include="Content\images\favicon.ico" />
     <Content Include="Content\images\logo-web.png" />
     <Content Include="Content\images\logo-web.svg" />
+    <Content Include="Content\images\mstile-144x144.png" />
+    <Content Include="Content\images\mstile-150x150.png" />
+    <Content Include="Content\images\mstile-310x150.png" />
+    <Content Include="Content\images\mstile-310x310.png" />
+    <Content Include="Content\images\mstile-70x70.png" />
     <Content Include="Content\images\no-person.png" />
     <Content Include="Content\style.css" />
     <Content Include="favicon.ico" />
@@ -136,6 +156,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\global-min.js" />
     <Content Include="Scripts\global.js" />
+    <Content Include="Scripts\lib\css-changer.js" />
     <Content Include="Scripts\lib\css-fixes.js" />
     <Content Include="Scripts\lib\expand-field.js" />
     <Content Include="Scripts\lib\ie-html5-fix.js" />
