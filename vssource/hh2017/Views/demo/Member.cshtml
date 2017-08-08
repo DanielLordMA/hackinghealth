@@ -127,18 +127,16 @@
                                     <span id="data-dob" class="cont-moreinfo">@ViewBag.Member.birthDate</span>
                                 </div>
                                 <div class="data-blood">
-                                    <span class="data-label">Blood Type:</span><span id="data-blood" class="data-important">@ViewBag.BloodGroup</span>
+                                    <span class="data-label">Blood Type:</span><span id="data-blood" class="data-important">B+</span>
                                 </div>
                             </div>
                             <div class="data-address">
                                 <span class="data-label">Address:</span><span id="data-address" class="cont-moreinfo-toggle">@ViewBag.Member.Address[0].City, @ViewBag.Member.Address[0].Country, @ViewBag.Member.Address[0].PostCode</span>
-                                <span id="data-address-full" class="cont-moreinfo">Unit 2A,<br />@ViewBag.Member.Address[0].line[0] ,<br/> @ViewBag.Member.Address[0].City, @ViewBag.Member.Address[0].Country, @ViewBag.Member.Address[0].PostCode </ span >
-                            </ div >
-
-
-
-                        </div>
-                        <div class="module-footer"></div>
+                                <span id="data-address-full" class="cont-moreinfo">
+                                    Unit 2A,<br />@ViewBag.Member.Address[0].line[0] ,<br /> @ViewBag.Member.Address[0].City, @ViewBag.Member.Address[0].Country, @ViewBag.Member.Address[0].PostCode </span >
+                                    </div >
+                            </div>
+                            <div class="module-footer"></div>
                     </article>
 
                     <!-- Critical Emergency Info -->
@@ -149,10 +147,20 @@
                         <div class="module-meta"></div>
                         <div class="module-content">
                             <ul id="data-critical">
-                                <li>Hemophilia Condition</li>
-                                <li>Latex Allergy</li>
-                                <li class="cont-moreinfo-toggle">Panadol Medication</li>
-                                <span class="cont-moreinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, earum, alias. Qui praesentium dolore hic, reiciendis numquam neque incidunt, consequatur debitis quaerat minus similique delectus, dolor optio. Natus ipsum, odio.</span>
+                                <li>Asthma</li>
+                                <li>Iodine Allergy</li>
+                                <li class="cont-moreinfo-toggle">Anaphylaxsis Bee Sting</li>
+                                <span class="cont-moreinfo">
+                                    15/06/2015 <br />
+                                    Rush to hospital if swelling 3cm or larger.<br />
+                                    Carries Epipen
+                                </span>
+                                <li class="cont-moreinfo-toggle">Anaphylaxsis Sea Food</li>
+                                <span class="cont-moreinfo">
+                                    15/06/2015 <br />
+                                    Rush to hospital if swelling 3cm or larger.<br />
+                                    Carries Epipen
+                                </span>
                                 <li>Advanced Directive Document</li>
                             </ul>
                         </div>
@@ -167,6 +175,7 @@
                         <div class="module-meta"></div>
                         <div class="module-content">
                             <ul id="data-conditions">
+                                <li>Asthma</li>
                                 @foreach (dynamic condition in ViewBag.Conditions)
                                 {
                                     <li>@condition.code.text</li>
@@ -184,6 +193,18 @@
                         <div class="module-meta"></div>
                         <div class="module-content">
                             <ul id="data-allergies">
+                                <li class="cont-moreinfo-toggle">Anaphylaxsis Bee Sting</li>
+                                <span class="cont-moreinfo">
+                                    15/06/2015 <br />
+                                    Rush to hospital if swelling 3cm or larger.<br />
+                                    Carries Epipen
+                                </span>
+                                <li class="cont-moreinfo-toggle">Anaphylaxsis Sea Food</li>
+                                <span class="cont-moreinfo">
+                                    15/06/2015 <br />
+                                    Rush to hospital if swelling 3cm or larger.<br />
+                                    Carries Epipen
+                                </span>
                                 @foreach (dynamic allergy in ViewBag.AllergyIntolerance)
                                 {
                                     <li>@allergy.code.text</li>
@@ -203,117 +224,118 @@
                             <ul id="data-medications">
                                 @foreach (dynamic medication in ViewBag.MedicationStatement)
                                 {
-                                    <li>@medication.MedicationCodeableConcept.text</li>
+                                    <li >@medication.MedicationCodeableConcept.text</li>
                                 }
-                            </ul>
-                        </div>
+                                <li>Carries Epipen</li>
+</ul>
+                    </div>
                         <div class="module-footer"></div>
                     </article>
 
                     <!-- Documents -->
-                    <article id="documents" class="module">
-                        <div class="module-header">
-                            <h6>Documents</h6>
-                        </div>
-                        <div class="module-meta"></div>
-                        <div class="module-content">
-                            <ul id="data-documents">
-                                <li class="data-important cont-moreinfo-toggle">Advanced Directive</li>
-                                <span class="cont-moreinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, earum, alias. Qui praesentium dolore hic, reiciendis numquam neque incidunt, consequatur debitis quaerat minus similique delectus, dolor optio. Natus ipsum, odio.</span>
-                            </ul>
-                        </div>
-                        <div class="module-footer"></div>
-                    </article>
+                                    <article id="documents" class="module">
+                                        <div class="module-header">
+                                            <h6>Documents</h6>
+                                        </div>
+                                        <div class="module-meta"></div>
+                                        <div class="module-content">
+                                            <ul id="data-documents">
+                                                <li class="data-important cont-moreinfo-toggle">Advanced Directive</li>
+                                                <span class="cont-moreinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, earum, alias. Qui praesentium dolore hic, reiciendis numquam neque incidunt, consequatur debitis quaerat minus similique delectus, dolor optio. Natus ipsum, odio.</span>
+                                            </ul>
+                                        </div>
+                                        <div class="module-footer"></div>
+                                    </article>
 
                     <!-- Emergency Contacts -->
-                    <article id="emergency-contacts" class="module">
-                        <div class="module-header">
-                            <h6>Emergency Contacts</h6>
-                        </div>
-                        <div class="module-meta"></div>
-                        <div class="module-content">
+                                    <article id="emergency-contacts" class="module">
+                                        <div class="module-header">
+                                            <h6>Emergency Contacts</h6>
+                                        </div>
+                                        <div class="module-meta"></div>
+                                        <div class="module-content">
+                                        
+                                                <div class="data-contact">
+                                                    <div>
+                                                        <span class="data-label">Name:</span><span>Sally Jones (Mother)</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="data-label">Home:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="data-label">Email:</span><span><a href="mailto:john.smith@email.com">Sally.Jones@email.com</a></span>
+                                                    </div>
+                                                </div>
 
-                            <div class="data-contact">
-                                <div>
-                                    <span class="data-label">Name:</span><span>John Smith (Father)</span>
-                                </div>
-                                <div>
-                                    <span class="data-label">Home:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
-                                </div>
-                                <div>
-                                    <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
-                                </div>
-                                <div>
-                                    <span class="data-label">Email:</span><span><a href="mailto:john.smith@email.com">john.smith@email.com</a></span>
-                                </div>
-                            </div>
+                                                <div class="data-contact">
+                                                    <div>
+                                                        <span class="data-label">Name:</span><span>John Jones (Father)</span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="data-label">Home:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
+                                                    </div>
+                                                    <div>
+                                                        <span class="data-label">Email:</span><span><a href="mailto:jane.smith@email.com">john.Jones@email.com</a></span>
+                                                    </div>
+                                                </div>
 
-                            <div class="data-contact">
-                                <div>
-                                    <span class="data-label">Name:</span><span>Jane Smith (Mother)</span>
-                                </div>
-                                <div>
-                                    <span class="data-label">Home:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
-                                </div>
-                                <div>
-                                    <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
-                                </div>
-                                <div>
-                                    <span class="data-label">Email:</span><span><a href="mailto:jane.smith@email.com">jane.smith@email.com</a></span>
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="module-footer"></div>
-                    </article>
+                                            </div>
+                                            <div class="module-footer"></div>
+                                        </article>
 
                     <!-- Medical Contacts -->
-                    <article id="medical-contacts" class="module">
-                        <div class="module-header">
-                            <h6>Medical Contacts</h6>
-                        </div>
-                        <div class="module-meta"></div>
-                        <div class="module-content">
+                                                <article id="medical-contacts" class="module">
+                                                    <div class="module-header">
+                                                        <h6>Medical Contacts</h6>
+                                                    </div>
+                                                    <div class="module-meta"></div>
+                                                    <div class="module-content">
 
-                            <div class="data-contact">
-                                <div>
-                                    <span class="data-label">Name:</span><span>John Smith (GP)</span>
-                                </div>
-                                <div>
-                                    <span class="data-label">Work:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
-                                </div>
-                                <div>
-                                    <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
-                                </div>
-                                <div>
-                                    <span class="data-label">Email:</span><span><a href="mailto:john.smith@email.com">john.smith@email.com</a></span>
-                                </div>
-                            </div>
+                                                        <div class="data-contact">
+                                                            <div>
+                                                                <span class="data-label">Name:</span><span>John Smith (GP)</span>
+                                                            </div>
+                                                            <div>
+                                                                <span class="data-label">Work:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
+                                                            </div>
+                                                            <div>
+                                                                <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
+                                                            </div>
+                                                            <div>
+                                                                <span class="data-label">Email:</span><span><a href="mailto:john.smith@email.com">john.smith@email.com</a></span>
+                                                            </div>
+                                                        </div>
 
-                        </div>
-                        <div class="module-footer"></div>
-                    </article>
+                                                    </div>
+                                                    <div class="module-footer"></div>
+                                                </article>
 
-                </main><!-- end .content-area -->
-            </section><!-- end .site-content-full -->
-        </div><!-- end .content-wrap -->
-    </div><!-- end #content -->
-
-
-    <footer role="contentinfo">
-        <div class="content-wrap">
-            <div>Dark</div>
-            <div class="onoffswitch">
-                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-                <label class="onoffswitch-label" for="myonoffswitch"></label>
-            </div>
-            <div>Light</div>
-        </div><!-- end .content-wrap -->
-    </footer><!-- end footer -->
-
-    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-    @Scripts.Render("~/bundles/glo")
+                                            </main><!-- end .content-area -->
+                                        </section><!-- end .site-content-full -->
+                                    </div><!-- end .content-wrap -->
+                                </div><!-- end #content -->
 
 
-</body>
-</html>
+                                                <footer role="contentinfo">
+                                                    <div class="content-wrap">
+                                                        <div>Dark</div>
+                                                        <div class="onoffswitch">
+                                                            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                                                            <label class="onoffswitch-label" for="myonoffswitch"></label>
+                                                        </div>
+                                                        <div>Light</div>
+                                                    </div><!-- end .content-wrap -->
+                                                </footer><!-- end footer -->
+
+                                                <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+                                                @Scripts.Render("~/bundles/glo")
+
+
+                                            </body>
+                                        </html>

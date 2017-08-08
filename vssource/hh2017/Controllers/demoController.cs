@@ -42,6 +42,7 @@ namespace hh2017.Controllers
             //{
             //    //ViewBag.BloodGroup = 
             //}
+            //ViewBag.critical = ((IEnumerable<dynamic>)ViewBag.JsonData.entry).Where(d => d.resource.category.coding.system == "http://hl7.org/fhir/ValueSet/allergy-intolerance-criticality" && d.resource.category.coding.).DefaultIfEmpty(new { resource = new { valueString = "unknown" } }).Select(d => d.resource).FirstOrDefault().valueString;
 
 
             ViewBag.MemberId = Identifier(ViewBag.Member.Identifier, "http://medicalert.nz/member-id");
