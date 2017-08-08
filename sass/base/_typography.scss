@@ -243,11 +243,13 @@ small {
 //==================================================================
 //  6. Speicfic Content Styling
 //==================================================================
-.data-label {
+.data-label,
+%data-label {
   color: $col-3;
 }
 
-.data-important {
+.data-important,
+%data-important {
   // Required to enforce bold on critical information
   // scss-lint:disable ImportantRule
   color: $col-2;

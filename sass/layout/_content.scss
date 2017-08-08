@@ -58,6 +58,16 @@ article,
   span {
     display: inline-block;
   }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      padding-bottom: $pad-site / 1.5;
+    }
+  }
 }
 
 .module-footer {
@@ -154,5 +164,11 @@ article,
     display: block;
     font-size: 0.85rem;
     margin-left: 80px;
+  }
+}
+
+#critical-emergency-info {
+  ul > li {
+    @extend %data-important;
   }
 }
