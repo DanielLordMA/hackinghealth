@@ -92,9 +92,14 @@ article,
 
     img {
       border-radius: 50%;
-      height: 80px;
+      height: 120px;
       margin: 0;
-      width: 80px;
+      width: 120px;
+
+      @include mq(S) {
+        height: 80px;
+        width: 80px;
+      }
     }
 
     h1 {
