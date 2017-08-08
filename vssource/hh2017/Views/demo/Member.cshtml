@@ -1,0 +1,221 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    @Styles.Render("~/Content/css")
+<title>MedicAlert</title>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+    <header role="banner">
+      <div class="content-wrap">
+        <div class="site-nav-home" >
+          <!-- New Search Button -->
+          <a href="index.html">
+            <i class="fa fa-chevron-left" aria-hidden="true"></i><span>New Search</span>
+          </a>
+        </div><!-- end .site-nav-home -->
+
+        <div class="site-nav-main" role="navigation">
+          <!-- Menu Toggle Button -->
+          <a href="" class="head-menu-toggle">
+            <span class="icon-menu"></span>
+          </a>
+
+          <!-- Primary Menu -->
+          <nav id="head-menu" class="head-menu">
+            <a href="#person-details">Person Details</a>
+            <a href="#critical-emergency-info">Critical Emergency Info</a>
+            <a href="#conditions">Conditions</a>
+            <a href="#allergies">Allergies</a>
+            <a href="#medications">Medications</a>
+            <a href="#documents">Documents</a>
+            <a href="#contact-details">Contact Details</a>
+          </nav>
+        </div><!-- end .site-nav-main -->
+      </div><!-- end .content-wrap -->
+    </header><!-- end header -->
+
+
+    <div id="content" role="main">
+      <div class="content-wrap">
+        <section class="site-content-full">
+          <main class="content-area" role="main">
+                    <!-- PERSON DETAILS -->
+                    <article id="pre-person-details" class="module">
+                        <div class="module-header">
+                            <h6>Person Details</h6>
+                        </div>
+                        <div class="module-meta"></div>
+                        <div class="module-content">
+                            @if(ViewBag.Member.Photo.Length > 0) { 
+                                <img alt="Embedded Image" src="data:image/png;base64,@ViewBag.Member.Photo[0].data" />
+                            }else{
+                            <img id="data-img" src="images/no-person.png" alt="">
+                            }
+                                <h1 id="data-name">@ViewBag.Member.name[0].family.ToUpper(), @ViewBag.Member.name[0].given[0] </h1>
+                            <div>
+                                <span class="data-label">Member #:</span><span id="data-memberid" class="data-label">@ViewBag.Member.Id</span>
+                            </div>
+                        </div>
+                        <div class="module-footer"></div>
+                    </article>
+
+                    <!-- PERSON DETAILS -->
+                    <article id="person-details" class="module">
+                        <div class="module-header">
+                            <h6>Person Details</h6>
+                        </div>
+                        <div class="module-meta"></div>
+                        <div class="module-content">
+                            <div class="cont-row">
+                                <div class="data-dob">
+                                    <span class="data-label">Age:</span><span id="data-age"> @(DateTime.Now.Year - DateTime.Parse(ViewBag.Member.birthDate).Year) years<span id="data-dob">@ViewBag.Member.birthDate</span></span>
+                                </div>
+                                <div class="data-blood">
+                                    <span class="data-label">Blood Type:</span><span id="data-blood" class="data-important">AB+ -- Observation.Code.Display </span>
+                                </div>
+                            </div>
+                            <div class="data-address">
+                                <span class="data-label">Address:</span><span id="data-address">@ViewBag.Member.Address[0].City </span><span id="data-address-full">@ViewBag.Member.Address[0].line[0]</span>
+                            </div>
+                        </div>
+                        <div class="module-footer"></div>
+                    </article>
+
+            <!-- Critical Emergency Info -->
+            <article id="critical-emergency-info" class="module">
+              <div class="module-header">
+                <h6>Critical Emergency Info</h6>
+              </div>
+              <div class="module-meta"></div>
+              <div class="module-content">
+                <ul id="data-critical">
+                  <li>Hemophilia Condition</li>
+                  <li>Latex Allergy</li>
+                  <li>Panadol Medication</li>
+                </ul>
+              </div>
+              <div class="module-footer"></div>
+            </article>
+
+            <div>
+              <ul>
+                <li class="expandable">
+                  Asthma
+                  <span class="expandable-content">Severe asthma</span>
+                </li>
+                <li>Diabetes</li>
+              </ul>
+            </div>
+
+            <!-- Conditions -->
+            <article id="conditions" class="module">
+              <div class="module-header">
+                <h6>Conditions</h6>
+              </div>
+              <div class="module-meta"></div>
+              <div class="module-content">
+                <ul id="data-conditions">
+                  <li>Asthma</li>
+                  <li>Dermatitis</li>
+                  <li class="data-important">Hemophilia</li>
+                  <li>Mumps</li>
+                </ul>
+              </div>
+              <div class="module-footer"></div>
+            </article>
+
+            <!-- Allergies -->
+            <article id="allergies" class="module">
+              <div class="module-header">
+                <h6>Allergies</h6>
+              </div>
+              <div class="module-meta"></div>
+              <div class="module-content">
+                <ul id="data-allergies">
+                  <li>Cotton</li>
+                  <li>Dust</li>
+                  <li>Lactose</li>
+                  <li class="data-important">Latex</li>
+                </ul>
+              </div>
+              <div class="module-footer"></div>
+            </article>
+
+            <!-- Medications -->
+            <article id="medications" class="module">
+              <div class="module-header">
+                <h6>Medications</h6>
+              </div>
+              <div class="module-meta"></div>
+              <div class="module-content">
+                <ul id="data-medications">
+                  <li class="data-important">Panadol</li>
+                </ul>
+              </div>
+              <div class="module-footer"></div>
+            </article>
+
+            <!-- Documents -->
+            <article id="documents" class="module">
+              <div class="module-header">
+                <h6>Documents</h6>
+              </div>
+              <div class="module-meta"></div>
+              <div class="module-content">
+                <ul id="data-documents">
+                  <li>None</li>
+                </ul>
+              </div>
+              <div class="module-footer"></div>
+            </article>
+
+            <!-- Contact Details -->
+            <article id="contact-details" class="module">
+              <div class="module-header">
+                <h6>Contact Details</h6>
+              </div>
+              <div class="module-meta"></div>
+              <div class="module-content">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro aliquam quo, deleniti exercitationem nam impedit numquam odit. Repellat tempora doloremque eligendi velit, quis ad. Ducimus qui quas magni neque inventore.</p>
+              </div>
+              <div class="module-footer"></div>
+            </article>
+
+          </main><!-- end .content-area -->
+        </section><!-- end .site-content-full -->
+      </div><!-- end .content-wrap -->
+    </div><!-- end #content -->
+
+
+    <footer role="contentinfo">
+      <div class="content-wrap">
+        <!-- FOOTER GOES HERE -->
+      </div><!-- end .content-wrap -->
+    </footer><!-- end footer -->
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    @Scripts.Render("~/bundles/glo")
+
+    <script>
+       var data = new {@ViewBag.JsonData};
+
+    </script>
+
+
+</body>
+</html>
