@@ -177,3 +177,14 @@ article,
     @extend %data-important;
   }
 }
+
+#emergency-contacts,
+#medical-contacts {
+  .data-contact {
+    margin-bottom: $pad-mod;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+}
