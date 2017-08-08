@@ -37,14 +37,17 @@ namespace hh2017.Controllers
             ViewBag.Conditions = ((IEnumerable<dynamic>)ViewBag.JsonData.entry).Where(d => d.resource.resourceType == "Condition").Select(d => d.resource);
             ViewBag.AllergyIntolerance = ((IEnumerable<dynamic>)ViewBag.JsonData.entry).Where(d => d.resource.resourceType == "AllergyIntolerance").Select(d => d.resource);
             ViewBag.MedicationStatement = ((IEnumerable<dynamic>)ViewBag.JsonData.entry).Where(d => d.resource.resourceType == "MedicationStatement").Select(d => d.resource);
+            ViewBag.BloodGroup = ((IEnumerable<dynamic>)ViewBag.JsonData.entry).Where(d => d.resource.resourceType == "Observation").DefaultIfEmpty(new { resource = new { valueString = "unknown"} }).Select(d => d.resource).FirstOrDefault().valueString ;
+            //if(ViewBag.Memberid = "28765")
+            //{
+            //    //ViewBag.BloodGroup = 
+            //}
+
 
             ViewBag.MemberId = Identifier(ViewBag.Member.Identifier, "http://medicalert.nz/member-id");
             ViewBag.MemberNHI = Identifier(ViewBag.Member.Identifier, "http://health.govt.nz/nhi");
             ViewBag.MemberIHI = Identifier(ViewBag.Member.Identifier, "http://health.govt.au/IHI");
 
-            //ViewBag.BloodGroup = ((IEnumerable<dynamic>)ViewBag.JsonData.entry).Where(d => d.resource.resourceType == "Observation").Select(d => d.resource.code.coding.display);
-            //.First() ?? "unknown";
-            //&& d.resource.code.codeing.system == "http://loinc.org"
 
             return View();
         }
@@ -55,6 +58,7 @@ namespace hh2017.Controllers
             HttpWebRequest request = (HttpWebRequest)WebRequest.Create(url);
             request.Method = "GET";
             request.Accept = "application/json+fhir";
+            request.Headers.Add("Cache-Control: no-cache");
             try
             {
                 WebResponse response = request.GetResponse();

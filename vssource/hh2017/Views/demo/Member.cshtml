@@ -27,7 +27,7 @@
     <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
     <link rel="icon" type="image/png" href="images/favicon-128.png" sizes="128x128" />
-    <meta name="application-name" content="MedicAlert"/>
+    <meta name="application-name" content="MedicAlert" />
     <meta name="msapplication-TileColor" content="#E9003B" />
     <meta name="msapplication-TileImage" content="images/mstile-144x144.png" />
     <meta name="msapplication-square70x70logo" content="images/mstile-70x70.png" />
@@ -40,44 +40,44 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
+</head>
 
-  <body>
+<body>
     <header role="banner">
-      <div class="content-wrap">
-        <div class="site-nav-home" >
-          <!-- New Search Button -->
-          <a href="index.html">
-            <i class="fa fa-chevron-left" aria-hidden="true"></i><span>New Search</span>
-          </a>
-        </div><!-- end .site-nav-home -->
+        <div class="content-wrap">
+            <div class="site-nav-home">
+                <!-- New Search Button -->
+                <a href="/">
+                    <i class="fa fa-chevron-left" aria-hidden="true"></i><span>New Search</span>
+                </a>
+            </div><!-- end .site-nav-home -->
 
-        <div class="site-nav-main" role="navigation">
-          <!-- Menu Toggle Button -->
-          <a href="" class="head-menu-toggle">
-            <span class="icon-menu"></span>
-          </a>
+            <div class="site-nav-main" role="navigation">
+                <!-- Menu Toggle Button -->
+                <a href="" class="head-menu-toggle">
+                    <span class="icon-menu"></span>
+                </a>
 
-          <!-- Primary Menu -->
-          <nav id="head-menu" class="head-menu">
-            <a href="#person-details">Person Details</a>
-            <a href="#critical-emergency-info">Critical Emergency Info</a>
-            <a href="#conditions">Conditions</a>
-            <a href="#allergies">Allergies</a>
-            <a href="#medications">Medications</a>
-            <a href="#documents">Documents</a>
-            <a href="#emergency-contacts">Emergency Contacts</a>
-            <a href="#medical-contacts">Medical Contacts</a>
-          </nav>
-        </div><!-- end .site-nav-main -->
-      </div><!-- end .content-wrap -->
+                <!-- Primary Menu -->
+                <nav id="head-menu" class="head-menu">
+                    <a href="#person-details">Person Details</a>
+                    <a href="#critical-emergency-info">Critical Emergency Info</a>
+                    <a href="#conditions">Conditions</a>
+                    <a href="#allergies">Allergies</a>
+                    <a href="#medications">Medications</a>
+                    <a href="#documents">Documents</a>
+                    <a href="#emergency-contacts">Emergency Contacts</a>
+                    <a href="#medical-contacts">Medical Contacts</a>
+                </nav>
+            </div><!-- end .site-nav-main -->
+        </div><!-- end .content-wrap -->
     </header><!-- end header -->
 
 
     <div id="content" role="main">
-      <div class="content-wrap">
-        <section class="site-content-full">
-          <main class="content-area" role="main">
+        <div class="content-wrap">
+            <section class="site-content-full">
+                <main class="content-area" role="main">
                     <!-- PERSON DETAILS -->
                     <article id="pre-person-details" class="module">
                         <div class="module-header">
@@ -85,25 +85,29 @@
                         </div>
                         <div class="module-meta"></div>
                         <div class="module-content">
-                            @if(ViewBag.Member.Photo.Length > 0) { 
+                            @if (ViewBag.Member.Photo.Length > 0)
+                            {
                                 <img alt="Embedded Image" src="data:image/png;base64,@ViewBag.Member.Photo[0].data" />
-                            }else{
-                            <img id="data-img" src="images/no-person.png" alt="">
                             }
-                                <h1 id="data-name">@ViewBag.Member.name[0].family.ToUpper(), @ViewBag.Member.name[0].given[0] </h1>
+                            else
+                            {
+                                <img id="data-img" src="images/no-person.png" alt="">
+                            }
+                            <h1 id="data-name">@ViewBag.Member.name[0].family.ToUpper(), @ViewBag.Member.name[0].given[0] </h1>
                             <div>
                                 <span class="data-label">Member #:</span><span id="data-memberid" class="data-label">@ViewBag.MemberId</span>
-                                @if(ViewBag.MemberNHI.Length > 0) { 
-                <div>
-                
-								<span class="data-label">NHI Number #:</span><span id="data-memberid" class="data-label">@ViewBag.MemberNHI</span>
-								</div>
+                                @if (ViewBag.MemberNHI.Length > 0)
+                                {
+                                    <div>
+
+                                        <span class="data-label">NHI Number #:</span><span id="data-memberid" class="data-label">@ViewBag.MemberNHI</span>
+                                    </div>
                                 }
                                 @if (ViewBag.MemberIHI.Length > 0)
                                 {
-                <div>
-                                    <span class="data-label">IHI Number #:</span><span id="data-memberid" class="data-label">@ViewBag.MemberIHI</span>
-								</div>
+                                    <div>
+                                        <span class="data-label">IHI Number #:</span><span id="data-memberid" class="data-label">@ViewBag.MemberIHI</span>
+                                    </div>
                                 }
                             </div>
                         </div>
@@ -119,189 +123,192 @@
                         <div class="module-content">
                             <div class="cont-row">
                                 <div class="data-dob">
-                                    <span class="data-label">Age:</span><span id="data-age" class="cont-moreinfo-toggle"> @(DateTime.Now.Year - DateTime.Parse(ViewBag.Member.birthDate).Year) years</span>
-									<span id="data-dob">@ViewBag.Member.birthDate</span>
+                                    <span class="data-label">Age:</span><span id="data-age" class="cont-moreinfo-toggle">@(DateTime.Now.Year - DateTime.Parse(ViewBag.Member.birthDate).Year) years</span>
+                                    <span id="data-dob" class="cont-moreinfo">@ViewBag.Member.birthDate</span>
                                 </div>
                                 <div class="data-blood">
-                                    <span class="data-label">Blood Type:</span><span id="data-blood" class="data-important">@ViewBag.BloodGroup </span>
+                                    <span class="data-label">Blood Type:</span><span id="data-blood" class="data-important">@ViewBag.BloodGroup</span>
                                 </div>
                             </div>
                             <div class="data-address">
-                  <span id="data-address-full" class="cont-moreinfo">Unit 2A,<br />123 No Street,<br />No City, QLD, 4000</span>
-                                <span class="data-label">Address:</span><span id="data-address">@ViewBag.Member.Address[0].City </span><span id="data-address-full">@ViewBag.Member.Address[0].line[0]</span>
-                            </div>
+                                <span class="data-label">Address:</span><span id="data-address" class="cont-moreinfo-toggle">@ViewBag.Member.Address[0].City, @ViewBag.Member.Address[0].Country, @ViewBag.Member.Address[0].PostCode</span>
+                                <span id="data-address-full" class="cont-moreinfo">Unit 2A,<br />@ViewBag.Member.Address[0].line[0] ,<br/> @ViewBag.Member.Address[0].City, @ViewBag.Member.Address[0].Country, @ViewBag.Member.Address[0].PostCode </ span >
+                            </ div >
+
+
+
                         </div>
                         <div class="module-footer"></div>
                     </article>
 
-            <!-- Critical Emergency Info -->
-            <article id="critical-emergency-info" class="module">
-              <div class="module-header">
-                <h6>Critical Emergency Info</h6>
-              </div>
-              <div class="module-meta"></div>
-              <div class="module-content">
-                <ul id="data-critical">
-                  <li>Hemophilia Condition</li>
-                  <li>Latex Allergy</li>
-                  <li class="cont-moreinfo-toggle">Panadol Medication</li>
-                  <span class="cont-moreinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, earum, alias. Qui praesentium dolore hic, reiciendis numquam neque incidunt, consequatur debitis quaerat minus similique delectus, dolor optio. Natus ipsum, odio.</span>
-                  <li>Advanced Directive Document</li>
-                </ul>
-              </div>
-              <div class="module-footer"></div>
-            </article>
-           
-            <!-- Conditions -->
-            <article id="conditions" class="module">
-              <div class="module-header">
-                <h6>Conditions</h6>
-              </div>
-              <div class="module-meta"></div>
-              <div class="module-content">
-                <ul id="data-conditions">
-                    @foreach (dynamic condition in ViewBag.Conditions)
-                    {
-                        <li>@condition.code.text</li>
-                    }
-                </ul>
-              </div>
-              <div class="module-footer"></div>
-            </article>
+                    <!-- Critical Emergency Info -->
+                    <article id="critical-emergency-info" class="module">
+                        <div class="module-header">
+                            <h6>Critical Emergency Info</h6>
+                        </div>
+                        <div class="module-meta"></div>
+                        <div class="module-content">
+                            <ul id="data-critical">
+                                <li>Hemophilia Condition</li>
+                                <li>Latex Allergy</li>
+                                <li class="cont-moreinfo-toggle">Panadol Medication</li>
+                                <span class="cont-moreinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, earum, alias. Qui praesentium dolore hic, reiciendis numquam neque incidunt, consequatur debitis quaerat minus similique delectus, dolor optio. Natus ipsum, odio.</span>
+                                <li>Advanced Directive Document</li>
+                            </ul>
+                        </div>
+                        <div class="module-footer"></div>
+                    </article>
 
-            <!-- Allergies -->
-            <article id="allergies" class="module">
-              <div class="module-header">
-                <h6>Allergies</h6>
-              </div>
-              <div class="module-meta"></div>
-              <div class="module-content">
-                <ul id="data-allergies">
-                    @foreach (dynamic allergy in ViewBag.AllergyIntolerance)
-                    {
-                        <li>@allergy.code.text</li>
-                    }
-                </ul>
-              </div>
-              <div class="module-footer"></div>
-            </article>
+                    <!-- Conditions -->
+                    <article id="conditions" class="module">
+                        <div class="module-header">
+                            <h6>Conditions</h6>
+                        </div>
+                        <div class="module-meta"></div>
+                        <div class="module-content">
+                            <ul id="data-conditions">
+                                @foreach (dynamic condition in ViewBag.Conditions)
+                                {
+                                    <li>@condition.code.text</li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="module-footer"></div>
+                    </article>
 
-            <!-- Medications -->
-            <article id="medications" class="module">
-              <div class="module-header">
-                <h6>Medications</h6>
-              </div>
-              <div class="module-meta"></div>
-              <div class="module-content">
-                  <ul id="data-medications">
-                      @foreach (dynamic medication in ViewBag.MedicationStatement)
-                      {
-                          <li>@medication.MedicationCodeableConcept.text</li>
-                      }
-                  </ul>
-              </div>
-              <div class="module-footer"></div>
-            </article>
+                    <!-- Allergies -->
+                    <article id="allergies" class="module">
+                        <div class="module-header">
+                            <h6>Allergies</h6>
+                        </div>
+                        <div class="module-meta"></div>
+                        <div class="module-content">
+                            <ul id="data-allergies">
+                                @foreach (dynamic allergy in ViewBag.AllergyIntolerance)
+                                {
+                                    <li>@allergy.code.text</li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="module-footer"></div>
+                    </article>
 
-            <!-- Documents -->
-            <article id="documents" class="module">
-              <div class="module-header">
-                <h6>Documents</h6>
-              </div>
-              <div class="module-meta"></div>
-              <div class="module-content">
-                <ul id="data-documents">
-                  <li class="data-important cont-moreinfo-toggle">Advanced Directive</li>
-                  <span class="cont-moreinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, earum, alias. Qui praesentium dolore hic, reiciendis numquam neque incidunt, consequatur debitis quaerat minus similique delectus, dolor optio. Natus ipsum, odio.</span>
-                </ul>
-              </div>
-              <div class="module-footer"></div>
-            </article>
+                    <!-- Medications -->
+                    <article id="medications" class="module">
+                        <div class="module-header">
+                            <h6>Medications</h6>
+                        </div>
+                        <div class="module-meta"></div>
+                        <div class="module-content">
+                            <ul id="data-medications">
+                                @foreach (dynamic medication in ViewBag.MedicationStatement)
+                                {
+                                    <li>@medication.MedicationCodeableConcept.text</li>
+                                }
+                            </ul>
+                        </div>
+                        <div class="module-footer"></div>
+                    </article>
 
-            <!-- Emergency Contacts -->
-            <article id="emergency-contacts" class="module">
-              <div class="module-header">
-                <h6>Emergency Contacts</h6>
-              </div>
-              <div class="module-meta"></div>
-              <div class="module-content">
+                    <!-- Documents -->
+                    <article id="documents" class="module">
+                        <div class="module-header">
+                            <h6>Documents</h6>
+                        </div>
+                        <div class="module-meta"></div>
+                        <div class="module-content">
+                            <ul id="data-documents">
+                                <li class="data-important cont-moreinfo-toggle">Advanced Directive</li>
+                                <span class="cont-moreinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, earum, alias. Qui praesentium dolore hic, reiciendis numquam neque incidunt, consequatur debitis quaerat minus similique delectus, dolor optio. Natus ipsum, odio.</span>
+                            </ul>
+                        </div>
+                        <div class="module-footer"></div>
+                    </article>
 
-                <div class="data-contact">
-                  <div>
-                    <span class="data-label">Name:</span><span>John Smith (Father)</span>
-                  </div>
-                  <div>
-                    <span class="data-label">Home:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
-                  </div>
-                  <div>
-                    <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
-                  </div>
-                  <div>
-                    <span class="data-label">Email:</span><span><a href="mailto:john.smith@email.com">john.smith@email.com</a></span>
-                  </div>
-                </div>
+                    <!-- Emergency Contacts -->
+                    <article id="emergency-contacts" class="module">
+                        <div class="module-header">
+                            <h6>Emergency Contacts</h6>
+                        </div>
+                        <div class="module-meta"></div>
+                        <div class="module-content">
 
-                <div class="data-contact">
-                  <div>
-                    <span class="data-label">Name:</span><span>Jane Smith (Mother)</span>
-                  </div>
-                  <div>
-                    <span class="data-label">Home:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
-                  </div>
-                  <div>
-                    <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
-                  </div>
-                  <div>
-                    <span class="data-label">Email:</span><span><a href="mailto:jane.smith@email.com">jane.smith@email.com</a></span>
-                  </div>
-                </div>
+                            <div class="data-contact">
+                                <div>
+                                    <span class="data-label">Name:</span><span>John Smith (Father)</span>
+                                </div>
+                                <div>
+                                    <span class="data-label">Home:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
+                                </div>
+                                <div>
+                                    <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
+                                </div>
+                                <div>
+                                    <span class="data-label">Email:</span><span><a href="mailto:john.smith@email.com">john.smith@email.com</a></span>
+                                </div>
+                            </div>
 
-              </div>
-              <div class="module-footer"></div>
-            </article>
+                            <div class="data-contact">
+                                <div>
+                                    <span class="data-label">Name:</span><span>Jane Smith (Mother)</span>
+                                </div>
+                                <div>
+                                    <span class="data-label">Home:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
+                                </div>
+                                <div>
+                                    <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
+                                </div>
+                                <div>
+                                    <span class="data-label">Email:</span><span><a href="mailto:jane.smith@email.com">jane.smith@email.com</a></span>
+                                </div>
+                            </div>
 
-            <!-- Medical Contacts -->
-            <article id="medical-contacts" class="module">
-              <div class="module-header">
-                <h6>Medical Contacts</h6>
-              </div>
-              <div class="module-meta"></div>
-              <div class="module-content">
+                        </div>
+                        <div class="module-footer"></div>
+                    </article>
 
-                <div class="data-contact">
-                  <div>
-                    <span class="data-label">Name:</span><span>John Smith (GP)</span>
-                  </div>
-                  <div>
-                    <span class="data-label">Work:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
-                  </div>
-                  <div>
-                    <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
-                  </div>
-                  <div>
-                    <span class="data-label">Email:</span><span><a href="mailto:john.smith@email.com">john.smith@email.com</a></span>
-                  </div>
-                </div>
+                    <!-- Medical Contacts -->
+                    <article id="medical-contacts" class="module">
+                        <div class="module-header">
+                            <h6>Medical Contacts</h6>
+                        </div>
+                        <div class="module-meta"></div>
+                        <div class="module-content">
 
-              </div>
-              <div class="module-footer"></div>
-            </article>
+                            <div class="data-contact">
+                                <div>
+                                    <span class="data-label">Name:</span><span>John Smith (GP)</span>
+                                </div>
+                                <div>
+                                    <span class="data-label">Work:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
+                                </div>
+                                <div>
+                                    <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
+                                </div>
+                                <div>
+                                    <span class="data-label">Email:</span><span><a href="mailto:john.smith@email.com">john.smith@email.com</a></span>
+                                </div>
+                            </div>
 
-          </main><!-- end .content-area -->
-        </section><!-- end .site-content-full -->
-      </div><!-- end .content-wrap -->
+                        </div>
+                        <div class="module-footer"></div>
+                    </article>
+
+                </main><!-- end .content-area -->
+            </section><!-- end .site-content-full -->
+        </div><!-- end .content-wrap -->
     </div><!-- end #content -->
 
 
     <footer role="contentinfo">
-      <div class="content-wrap">
-        <div>Dark</div>
-        <div class="onoffswitch">
-          <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
-          <label class="onoffswitch-label" for="myonoffswitch"></label>
-        </div>
-        <div>Light</div>
-      </div><!-- end .content-wrap -->
+        <div class="content-wrap">
+            <div>Dark</div>
+            <div class="onoffswitch">
+                <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+                <label class="onoffswitch-label" for="myonoffswitch"></label>
+            </div>
+            <div>Light</div>
+        </div><!-- end .content-wrap -->
     </footer><!-- end footer -->
 
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
