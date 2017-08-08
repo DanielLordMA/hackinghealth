@@ -115,6 +115,21 @@ article,
     }
   }
 
+  .data-dob {
+    align-items: flex-start;
+    display: flex;
+  }
+
+  #data-age {
+    padding-right: 5px;
+  }
+
+  #data-dob {
+    color: $col-3;
+    display: block;
+    font-size: 0.85rem;
+  }
+
   .data-blood {
     margin-left: $pad-mod * 5;
 
