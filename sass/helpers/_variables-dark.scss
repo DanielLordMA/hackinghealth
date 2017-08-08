@@ -1,0 +1,193 @@
+//******************************************************************
+//  Table of Contents
+//  -----------------
+//
+//  1. Colours
+//  2. Typography
+//  3. Viewport Media Query Sizing
+//  4. Site Width
+//  5. Site Offset
+//  6. Content & Sidebar Sizing
+//  7. Sidebar Offset
+//  8. FlexGrid System
+//  9. Padding
+// 10. Vendor Variables
+//
+//******************************************************************
+
+
+//==================================================================
+//  1. Colours
+//==================================================================
+// Default Colours
+
+$black:                       #000000;          // Black
+$red:                         #ea2e5a;          // MedicAlert Red
+$grey:                        #595959;          // Grey
+$dark-grey:                   #333333;          // Dark Grey
+$dark-grey-menu:              #292929;          // Dark Grey Menu
+$light-grey:                  #c6c6c6;          // Light Grey
+$extra-light-grey:            #f7f7f7;          // Extra Light Grey
+$white:                       #ffffff;          // White
+
+$data-1:                      #1dc7ea;          // Blue
+$data-2:                      #fb404b;          // Red
+$data-3:                      #ffa534;          // Orange
+
+$colours-bk:                  #fafafa;          // Light Grey
+$colours-brd:                 #ebebeb;          // Light Grey
+$colours-font:                #000000;          // Black
+
+// Standard Elements
+
+$col-1:                       $white;           // White            : Default content font colour
+$col-2:                       $red;             // MedicAlert Red   : Brand colour (hover links, menu, etc)
+$col-3:                       $light-grey;      // Light Grey       : Alternate text (e.g. form labels, etc)
+$col-4:                       $grey;            // Grey             : Section borders and other secondary elements on site
+
+$col-white:                   $white;           // White            : Used for various misc elements
+$col-black:                   $black;           // Black            : Used for various misc elements
+
+$col-grey:                    $grey;            // Grey             : Used for various misc elements
+$col-lgrey:                   $light-grey;      // Light Grey       : Used for various misc elements
+$col-dgrey:                   $dark-grey;       // Dark Grey        : Used for various misc elements
+
+// Background Colours
+$col-bkg--body:               $dark-grey-menu;  // Dark Grey        : Default body background colour
+$col-bkg--menu:               $red;             // MedicAlert Red   : Menu background colour (usually for mobile menu)
+$col-bkg--header:             $dark-grey-menu;  // Dark Grey        : Header background colour
+$col-bkg--content:            $dark-grey-menu;  // Dark Grey        : Content background colour
+$col-bkg--footer:             $dark-grey-menu;  // Dark Grey        : Footer background colour
+$col-bkg--sidebar:            $dark-grey-menu;  // Dark Grey        : Sidebar background colour
+$col-bkg--search:             $dark-grey-menu;  // Dark Grey        : Search Page (home) background colour
+
+// Data Colours (used for graphs, etc)
+$col-dat--1:                  $data-1;          // Blue             : Data colour 1 for graphs, etc
+$col-dat--2:                  $data-2;          // Red              : Data colour 2 for graphs, etc
+$col-dat--3:                  $data-3;          // Orange           : Data colour 3 for graphs, etc
+
+// Code Colours (used for code blocks, etc)
+$col-code--bkg:               $colours-bk;      // Light Grey       : Code block background colour
+$col-code--brd:               $colours-brd;     // Light Grey       : Code block border colour
+$col-code--font:              $colours-font;    // Black            : Code font colour
+
+// Header Colours
+// -- None --
+
+// Content Colours
+// -- None --
+
+// Footer Colours
+// -- None --
+
+// Sidebar Colours
+// -- None --
+
+// Miscellaneous Colours
+$col-scrn--read:              $extra-light-grey; // Extra-Light Grey : Screen reader background colour
+
+
+//==================================================================
+//  2. Typography
+//==================================================================
+// Font Families
+$font-family--title:          'Roboto', Arial, sans-serif;
+$font-family--content:        'Roboto', Arial, sans-serif;
+$font-family--code:           Menlo, Consolas, Monaco, monospace;
+
+// Default Font Size
+$font-size--base:             18px;
+$font-size--retina:           18px;
+$font-size--lrg:              1.2rem;
+$font-size--sml:              0.8rem;
+
+// Heading Font Size
+$font-size--h1:               2rem;
+$font-size--h2:               1.8rem;
+$font-size--h3:               1.6rem;
+$font-size--h4:               1.4rem;
+$font-size--h5:               1.2rem;
+$font-size--h6:               1rem;
+
+
+//==================================================================
+//  3. Viewport Media Query Sizing
+//==================================================================
+// NOTE: Viewport widths used to define media queries
+
+$vp-lrg:                      1280px;         // Laptop or desktop
+$vp-med:                      1024px;         // Tablet
+$vp-sml:                      767px;          // Large phone
+$vp-xsml:                     320px;          // Small phone
+
+
+//==================================================================
+//  4. Site Width
+//==================================================================
+// NOTE: Sets the max-width in the .content-wrap class. This is
+//       useful for when you want to limit the width of the site or
+//       a particular element on a site.
+
+$vp-max-width:                1280px;
+
+
+//==================================================================
+//  5. Site Offset
+//==================================================================
+// NOTE: The left & right padding so that the content is offset from
+//       the sides of the viewport. Applies to all key content areas.
+
+$vp-lrg--site-offset:         20px;
+$vp-med--site-offset:         20px;
+$vp-sml--site-offset:         10px;
+$vp-xsml--site-offset:        8px;
+
+
+//==================================================================
+//  6. Content & Sidebar Sizing
+//==================================================================
+// NOTE: Layout percentage sizing between content and sidebar
+
+// Large Viewport
+$vp-lrg--content:             75%;
+$vp-lrg--sidebar:             25%;
+
+// Medium Viewport
+$vp-med--content:             70%;
+$vp-med--sidebar:             30%;
+
+
+//==================================================================
+//  7. Sidebar Offset
+//==================================================================
+// NOTE: Left margin on the sidebar so that the sidebar content
+//       is offset from main content (.site-content).
+
+$vp-lrg--sidebar-offset:      40px;
+$vp-med--sidebar-offset:      30px;
+$vp-sml--sidebar-offset:      25px;
+$vp-xsml--sidebar-offset:     20px;
+
+
+//==================================================================
+//  8. FlexGrid System
+//==================================================================
+// NOTE: These are the variables used to control the FlexGrid System
+
+$grid--gutter:                20px;           // Default
+$grid--gutter-sml:            10px;
+$grid--gutter-lrg:            30px;
+$grid--gutter-xlrg:           40px;
+
+
+//==================================================================
+//  9. Padding
+//==================================================================
+$pad-site:                    20px;           // Standard padding size
+$pad-mod:                     40px;           // Spacing between each content module (i.e. boxes)
+
+
+//==================================================================
+//  10. Vendor Variables
+//==================================================================
+// -- None --

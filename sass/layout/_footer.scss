@@ -13,7 +13,12 @@
 //==================================================================
 footer {
   background-color: $col-bkg--footer;
-  margin-bottom: $pad-site / 2;
+
+  .content-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: $pad-mod;
+  }
 }
 
 
