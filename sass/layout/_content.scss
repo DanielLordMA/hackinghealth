@@ -115,12 +115,8 @@ article,
     }
   }
 
-  .data-dob {
-    align-items: flex-start;
-    display: flex;
-  }
-
   #data-age {
+    font-weight: bold;
     padding-right: 5px;
   }
 
@@ -128,6 +124,7 @@ article,
     color: $col-3;
     display: block;
     font-size: 0.85rem;
+    margin-left: 80px;
   }
 
   .data-blood {
@@ -148,8 +145,14 @@ article,
     }
   }
 
-  .data-address {
-    align-items: flex-start;
-    display: flex;
+  #data-address {
+    font-weight: bold;
+  }
+
+  #data-address-full {
+    color: $col-3;
+    display: block;
+    font-size: 0.85rem;
+    margin-left: 80px;
   }
 }
