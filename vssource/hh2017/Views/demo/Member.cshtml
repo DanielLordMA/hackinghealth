@@ -68,7 +68,14 @@
                             }
                                 <h1 id="data-name">@ViewBag.Member.name[0].family.ToUpper(), @ViewBag.Member.name[0].given[0] </h1>
                             <div>
-                                <span class="data-label">Member #:</span><span id="data-memberid" class="data-label">@ViewBag.Member.Id</span>
+                                <span class="data-label">Member #:</span><span id="data-memberid" class="data-label">@ViewBag.MemberId</span>
+                                @if(ViewBag.MemberNHI.Length > 0) { 
+                                <span class="data-label">NHI Number #:</span><span id="data-memberid" class="data-label">@ViewBag.MemberNHI</span>
+                                }
+                                @if (ViewBag.MemberIHI.Length > 0)
+                                {
+                                    <span class="data-label">IHI Number #:</span><span id="data-memberid" class="data-label">@ViewBag.MemberIHI</span>
+                                }
                             </div>
                         </div>
                         <div class="module-footer"></div>
@@ -86,7 +93,7 @@
                                     <span class="data-label">Age:</span><span id="data-age"> @(DateTime.Now.Year - DateTime.Parse(ViewBag.Member.birthDate).Year) years<span id="data-dob">@ViewBag.Member.birthDate</span></span>
                                 </div>
                                 <div class="data-blood">
-                                    <span class="data-label">Blood Type:</span><span id="data-blood" class="data-important">AB+ -- Observation.Code.Display </span>
+                                    <span class="data-label">Blood Type:</span><span id="data-blood" class="data-important">@ViewBag.BloodGroup </span>
                                 </div>
                             </div>
                             <div class="data-address">
@@ -130,10 +137,10 @@
               <div class="module-meta"></div>
               <div class="module-content">
                 <ul id="data-conditions">
-                  <li>Asthma</li>
-                  <li>Dermatitis</li>
-                  <li class="data-important">Hemophilia</li>
-                  <li>Mumps</li>
+                    @foreach (dynamic condition in ViewBag.Conditions)
+                    {
+                        <li>@condition.code.text</li>
+                    }
                 </ul>
               </div>
               <div class="module-footer"></div>
@@ -147,10 +154,10 @@
               <div class="module-meta"></div>
               <div class="module-content">
                 <ul id="data-allergies">
-                  <li>Cotton</li>
-                  <li>Dust</li>
-                  <li>Lactose</li>
-                  <li class="data-important">Latex</li>
+                    @foreach (dynamic allergy in ViewBag.AllergyIntolerance)
+                    {
+                        <li>@allergy.code.text</li>
+                    }
                 </ul>
               </div>
               <div class="module-footer"></div>
@@ -163,9 +170,12 @@
               </div>
               <div class="module-meta"></div>
               <div class="module-content">
-                <ul id="data-medications">
-                  <li class="data-important">Panadol</li>
-                </ul>
+                  <ul id="data-medications">
+                      @foreach (dynamic medication in ViewBag.MedicationStatement)
+                      {
+                          <li>@medication.MedicationCodeableConcept.text</li>
+                      }
+                  </ul>
               </div>
               <div class="module-footer"></div>
             </article>
