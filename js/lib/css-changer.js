@@ -26,13 +26,13 @@ function changeCSS(cssFile, cssLinkIndex) {
 
 // myonoffswitch
 $(document).ready(function() {
-  $('#myonoffswitch').change(function() {
+  $('#myonoffswitch').change(function(event) {
     if(this.checked) {
       changeCSS('style.css', 0);
-      event.preventDefault();
+      scrollToTop();
     } else {
       changeCSS('style-dark.css', 0);
-      event.preventDefault();
+      scrollToTop();
     }
   });
 });
