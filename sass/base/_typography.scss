@@ -261,8 +261,10 @@ small {
 }
 
 .cont-moreinfo-toggle::after {
+  color: $col-lgrey;
   content: '\f078';
   display: inline-block;
   font-family: FontAwesome;
+  font-size: 0.8rem;
   padding-left: $pad-site / 3;
 }
