@@ -49,15 +49,16 @@
         </div><!-- end .content-wrap -->
     </div><!-- end #content -->
 
-
     <footer role="contentinfo">
+@if (ViewBag.error.Length > 0)
+{
         <div class="content-wrap">
             <div id="div-result">
-                &nbsp;
+                @ViewBag.error
             </div>
         </div><!-- end .content-wrap -->
+}
     </footer><!-- end footer -->
-
 @Scripts.Render("~/bundles/glo")
 </body>
 </html>
