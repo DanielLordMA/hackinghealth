@@ -12,12 +12,6 @@
 //   Author:         Michael Cadogan
 //   Creation Date:  08.08.2017
 //   Purpose/Change: Initial development
-//
-//   Version:        1.1
-//   Author:         Luca Sturlese
-//   Creation Date:  08.08.2017
-//   Purpose/Change: Updated class names to integrate with existing
-//                   class structure of project
 //==================================================================
 
 $(document).ready(function() {

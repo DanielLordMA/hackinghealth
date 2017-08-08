@@ -20,36 +20,56 @@
 //  1. Colours
 //==================================================================
 // Default Colours
-$col-1:                       #000000;        // Black            : Default content font colour
-$col-2:                       #e9003b;        // MedicAlert Red   : Brand colour (hover links, menu, etc)
-$col-3:                       #595959;        // Grey             : Alternate text (e.g. form labels, etc)
-$col-4:                       #c6c6c6;        // Light Grey       : Section borders and other secondary elements on site
 
-$col-white:                   #ffffff;        // White            : Used for various misc elements
-$col-black:                   #000000;        // Black            : Used for various misc elements
+$black:                       #000000;          // Black
+$red:                         #e9003b;          // MedicAlert Red
+$grey:                        #595959;          // Grey
+$dark-grey:                   #333333;          // Dark Grey
+$dark-grey-menu:              #292929;          // Dark Grey Menu
+$light-grey:                  #c6c6c6;          // Light Grey
+$extra-light-grey:            #f7f7f7;          // Extra Light Grey
+$white:                       #ffffff;          // White
 
-$col-grey:                    #595959;        // Grey             : Used for various misc elements
-$col-lgrey:                   #cccccc;        // Light Grey       : Used for various misc elements
-$col-dgrey:                   #333333;        // Dark Grey        : Used for various misc elements
+$data-1:                      #1dc7ea;          // Blue
+$data-2:                      #fb404b;          // Red
+$data-3:                      #ffa534;          // Orange
+
+$colours-bk:                  #fafafa;          // Light Grey
+$colours-brd:                 #ebebeb;          // Light Grey
+$colours-font:                #000000;          // Black
+
+// Standard Elements
+
+$col-1:                       $black;           // Black            : Default content font colour
+$col-2:                       $red;             // MedicAlert Red   : Brand colour (hover links, menu, etc)
+$col-3:                       $grey;            // Grey             : Alternate text (e.g. form labels, etc)
+$col-4:                       $light-grey;      // Light Grey       : Section borders and other secondary elements on site
+
+$col-white:                   $white;           // White            : Used for various misc elements
+$col-black:                   $black;           // Black            : Used for various misc elements
+
+$col-grey:                    $grey;            // Grey             : Used for various misc elements
+$col-lgrey:                   $light-grey;      // Light Grey       : Used for various misc elements
+$col-dgrey:                   $dark-grey;       // Dark Grey        : Used for various misc elements
 
 // Background Colours
-$col-bkg--body:               #ffffff;        // White            : Default body background colour
-$col-bkg--menu:               #292929;        // Dark Grey        : Menu background colour (usually for mobile menu)
-$col-bkg--header:             #ffffff;        // White            : Header background colour
-$col-bkg--content:            #ffffff;        // White            : Content background colour
-$col-bkg--footer:             #ffffff;        // White            : Footer background colour
-$col-bkg--sidebar:            #ffffff;        // White            : Sidebar background colour
-$col-bkg--search:             #292929;        // Dark Grey        : Search Page (home) background colour
+$col-bkg--body:               $white;           // White            : Default body background colour
+$col-bkg--menu:               $dark-grey-menu;  // Dark Grey        : Menu background colour (usually for mobile menu)
+$col-bkg--header:             $white;           // White            : Header background colour
+$col-bkg--content:            $white;           // White            : Content background colour
+$col-bkg--footer:             $white;           // White            : Footer background colour
+$col-bkg--sidebar:            $white;           // White            : Sidebar background colour
+$col-bkg--search:             $dark-grey-menu;  // Dark Grey        : Search Page (home) background colour
 
 // Data Colours (used for graphs, etc)
-$col-dat--1:                  #1dc7ea;        // Blue             : Data colour 1 for graphs, etc
-$col-dat--2:                  #fb404b;        // Red              : Data colour 2 for graphs, etc
-$col-dat--3:                  #ffa534;        // Orange           : Data colour 3 for graphs, etc
+$col-dat--1:                  $data-1;          // Blue             : Data colour 1 for graphs, etc
+$col-dat--2:                  $data-2;          // Red              : Data colour 2 for graphs, etc
+$col-dat--3:                  $data-3;          // Orange           : Data colour 3 for graphs, etc
 
 // Code Colours (used for code blocks, etc)
-$col-code--bkg:               #fafafa;        // Light Grey       : Code block background colour
-$col-code--brd:               #ebebeb;        // Light Grey       : Code block border colour
-$col-code--font:              #000000;        // Black            : Code font colour
+$col-code--bkg:               $colours-bk;      // Light Grey       : Code block background colour
+$col-code--brd:               $colours-brd;     // Light Grey       : Code block border colour
+$col-code--font:              $colours-font;    // Black            : Code font colour
 
 // Header Colours
 // -- None --
@@ -64,7 +84,7 @@ $col-code--font:              #000000;        // Black            : Code font co
 // -- None --
 
 // Miscellaneous Colours
-$col-scrn--read:              #f7f7f7;        // Extra-Light Grey : Screen reader background colour
+$col-scrn--read:              $extra-light-grey; // Extra-Light Grey : Screen reader background colour
 
 
 //==================================================================
