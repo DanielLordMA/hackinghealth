@@ -26,7 +26,7 @@ function changeCSS(cssFile, cssLinkIndex) {
 
 // myonoffswitch
 $(document).ready(function() {
-  $('#myonoffswitch').change(function(event) {
+  $('#myonoffswitch').change(function() {
     if(this.checked) {
       changeCSS('style.css', 0);
       scrollToTop();
