@@ -268,3 +268,10 @@ small {
   font-size: 0.8rem;
   padding-left: $pad-site / 3;
 }
+
+.cont-moreinfo {
+  color: $col-3;
+  font-size: 0.85rem;
+  margin-bottom: $pad-site / 1.5;
+  margin-top: ($pad-site / 1.5) * -1;      // Removes li padding-bottom set in /sass/layout/_content.scss file
+}
