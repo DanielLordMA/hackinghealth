@@ -241,7 +241,7 @@
                                         <div class="module-content">
                                             <ul id="data-documents">
                                                 <li class="data-important cont-moreinfo-toggle">Advanced Directive</li>
-                                                <span class="cont-moreinfo">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Libero, earum, alias. Qui praesentium dolore hic, reiciendis numquam neque incidunt, consequatur debitis quaerat minus similique delectus, dolor optio. Natus ipsum, odio.</span>
+                                                <span class="cont-moreinfo">Example Advanced Directive, could be things like No Blood products, Do not resuscitate etc</span>
                                             </ul>
                                         </div>
                                         <div class="module-footer"></div>
@@ -254,36 +254,20 @@
                                         </div>
                                         <div class="module-meta"></div>
                                         <div class="module-content">
-                                        
-                                                <div class="data-contact">
-                                                    <div>
-                                                        <span class="data-label">Name:</span><span>Sally Jones (Mother)</span>
-                                                    </div>
-                                                    <div>
-                                                        <span class="data-label">Home:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
-                                                    </div>
-                                                    <div>
-                                                        <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
-                                                    </div>
-                                                    <div>
-                                                        <span class="data-label">Email:</span><span><a href="mailto:john.smith@email.com">Sally.Jones@email.com</a></span>
-                                                    </div>
+                                        @foreach (dynamic contact in ViewBag.Member.contact)
+                                        {
+                                            <div class="data-contact">
+                                                <div>
+                                                    <span class="data-label">Name:</span><span>@contact.name.text (@contact.relationship[0].text)</span>
                                                 </div>
-
-                                                <div class="data-contact">
+                                                @foreach (dynamic telecom in contact.telecom)
+                                                {
                                                     <div>
-                                                        <span class="data-label">Name:</span><span>John Jones (Father)</span>
+                                                        <span class="data-label">@telecom.system @if(telecom.system == "Phone") { @telecom.use; } </span><span><a href="@if(telecom.system == "Phone") { <text>tel:</text> }else{<text>email:</text>}@telecom.value">@telecom.value</a></span>
                                                     </div>
-                                                    <div>
-                                                        <span class="data-label">Home:</span><span><a href="tel:+61712345678">+61 7 1234 5678</a></span>
-                                                    </div>
-                                                    <div>
-                                                        <span class="data-label">Mobile:</span><span><a href="tel:+61123456789">+61 123 456 789</a></span>
-                                                    </div>
-                                                    <div>
-                                                        <span class="data-label">Email:</span><span><a href="mailto:jane.smith@email.com">john.Jones@email.com</a></span>
-                                                    </div>
-                                                </div>
+                                                }
+                                            </div>
+                                        }
 
                                             </div>
                                             <div class="module-footer"></div>
