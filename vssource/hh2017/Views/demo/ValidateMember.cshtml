@@ -1,0 +1,80 @@
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    @Styles.Render("~/Content/css")
+    <title>MedicAlert</title>
+
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="images/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="images/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="images/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="images/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="images/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="images/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="images/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="MedicAlert" />
+    <meta name="msapplication-TileColor" content="#E9003B" />
+    <meta name="msapplication-TileImage" content="images/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="images/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="images/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="images/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="images/mstile-310x310.png" />
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="page-search">
+    <header role="banner">
+        <div class="content-wrap">
+            <div class="site-brand">
+                <h1 class="logo"><span>MedicAlert</span></h1>
+            </div><!-- end .site-brand -->
+        </div><!-- end .content-wrap -->
+    </header><!-- end header -->
+
+
+    <div id="content" role="main">
+        <div class="content-wrap">
+            <section class="site-content-full">
+                <main class="content-area" role="main">
+                    @using (Html.BeginForm("Member",null, FormMethod.Post))
+                    {
+                        <input type="hidden" name="key" value="@ViewBag.Key" />
+                        <div class="search-form">
+                            <div>
+                                
+                                <input id="tb_ memberid"  required="true" type="text" pattern="\d*" name="memberid" value="" placeholder="Member ID from back of Medical ID" autofocus>
+                               
+                            </div>
+
+                            <div>
+                                <input id="btn_submit" type="submit" value="Get Record" class="button">
+                            </div>
+                        </div><!-- end div.search-form -->
+                    }
+                </main><!-- end .content-area -->
+            </section><!-- end .site-content-full -->
+        </div><!-- end .content-wrap -->
+    </div><!-- end #content -->
+
+    
+    @Scripts.Render("~/bundles/glo")
+</body>
+</html>
